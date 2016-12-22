@@ -9,6 +9,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,10 +28,12 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View view) {
 
-				startActivity(new Intent(MainActivity.this,ExtraInfoActivity.class));
+				//startActivity(new Intent(MainActivity.this,ExtraInfoActivity.class));
 
-				Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-					.setAction("Action", null).show();
+				/*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+					.setAction("Action", null).show();*/
+
+                startScan();
 			}
 		});
 	}
@@ -41,16 +47,33 @@ public class MainActivity extends AppCompatActivity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
+
 		int id = item.getItemId();
 
-		//noinspection SimplifiableIfStatement
 		if (id == R.id.action_settings) {
 			return true;
 		}
 
 		return super.onOptionsItemSelected(item);
+	}
+
+	private void startScan(){
+
+		new IntentIntegrator(this).initiateScan();
+
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+		if(result != null) {
+			if(result.getContents() == null) {
+				Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
+			} else {
+				Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+			}
+		} else {
+			super.onActivityResult(requestCode, resultCode, data);
+		}
 	}
 }
