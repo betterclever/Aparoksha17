@@ -4,14 +4,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import eu.long1.spacetablayout.SpaceTabLayout;
 
-public class ExtraInfoActivity extends AppCompatActivity {
+public class EventDetailActivity extends AppCompatActivity {
 
 	ViewPager viewPager;
 	SpaceTabLayout spaceTabLayout;
@@ -19,7 +18,7 @@ public class ExtraInfoActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_extra_info);
+		setContentView(R.layout.activity_event_detail);
 
 		assignViews();
 
