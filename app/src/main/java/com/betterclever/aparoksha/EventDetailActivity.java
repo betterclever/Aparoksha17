@@ -5,6 +5,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.betterclever.aparoksha.fragments.TimeDate;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,9 +31,9 @@ public class EventDetailActivity extends AppCompatActivity {
 	private void init(Bundle savedInstanceState) {
 
 		List<Fragment> fragmentList = new ArrayList<>();
-		fragmentList.add(Developers.newInstance());
-		fragmentList.add(Developers.newInstance());
-		fragmentList.add(Developers.newInstance());
+		fragmentList.add(TimeDate.newInstance());
+		fragmentList.add(TimeDate.newInstance());
+		fragmentList.add(TimeDate.newInstance());
 
 		spaceTabLayout.initialize(viewPager, getSupportFragmentManager(),
 			fragmentList, savedInstanceState);
