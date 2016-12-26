@@ -1,7 +1,6 @@
-package com.betterclever.aparoksha;
+package com.betterclever.aparoksha.activities;
 
 import android.graphics.Color;
-import android.media.Image;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.betterclever.aparoksha.R;
 import com.betterclever.aparoksha.fragments.TimeDate;
 
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ public class EventDetailActivity extends AppCompatActivity {
 			public void onClick(View v) {
 
 				Blurry.with(EventDetailActivity.this)
-						.radius(25)
+						.radius(5)
 						.sampling(2)
 						.color(Color.argb(100, 0, 0, 0))
 						.async()
@@ -45,8 +45,6 @@ public class EventDetailActivity extends AppCompatActivity {
 						.into(eventImageView);
 			}
 		});
-
-
 
 	}
 
