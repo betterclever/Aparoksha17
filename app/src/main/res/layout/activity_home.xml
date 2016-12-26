@@ -28,7 +28,7 @@
         app:layout_constraintRight_toLeftOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline"
         app:layout_constraintVertical_bias="0.304"
-        app:srcCompat="@drawable/ic_team" />
+        app:srcCompat="@drawable/calendar_icon" />
 
     <ImageView
         android:id="@+id/qrImageView"
@@ -42,7 +42,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewPager"
         app:layout_constraintVertical_bias="0.050000012"
-        app:srcCompat="@drawable/ic_team" />
+        app:srcCompat="@drawable/ic_qr_code" />
 
     <ImageView
         android:id="@+id/categoryImageView"
@@ -56,7 +56,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/guideline"
         app:layout_constraintVertical_bias="0.3"
-        app:srcCompat="@drawable/ic_team" />
+        app:srcCompat="@drawable/ic_category" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"

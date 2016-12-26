@@ -17,7 +17,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
         assignViews();
         blurViews();
     }
@@ -41,9 +40,9 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Blurry.with(HomeActivity.this)
-                        .radius(10)
+                        .radius(5)
                         .sampling(1)
-                        .color(Color.argb(100, 0, 0, 0))
+                        .color(Color.argb(150, 0, 0, 0))
                         .async()
                         .capture(categoryImageView)
                         .into(categoryImageView);
@@ -54,9 +53,9 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Blurry.with(HomeActivity.this)
-                        .radius(10)
+                        .radius(5)
                         .sampling(1)
-                        .color(Color.argb(100, 0, 0, 0))
+                        .color(Color.argb(150, 0, 0, 0))
                         .async()
                         .capture(dayImageView)
                         .into(dayImageView);
