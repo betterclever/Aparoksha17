@@ -1,4 +1,4 @@
-package com.betterclever.aparoksha.activities;
+package com.betterclever.aparoksha.fragments;
 
 
 import android.os.Bundle;

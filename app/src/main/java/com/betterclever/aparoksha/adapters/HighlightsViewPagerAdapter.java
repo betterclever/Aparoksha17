@@ -1,15 +1,10 @@
-package com.betterclever.aparoksha;
+package com.betterclever.aparoksha.adapters;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.ListFragment;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.view.View;
 
-import com.betterclever.aparoksha.activities.HighlightsFragment;
+import com.betterclever.aparoksha.fragments.HighlightsFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +13,11 @@ import java.util.List;
  * Created by betterclever on 27/12/16.
  */
 
-public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+public class HighlightsViewPagerAdapter extends FragmentStatePagerAdapter {
 
     List<Fragment> fragments;
 
-    public ViewPagerAdapter(FragmentManager fm) {
+    public HighlightsViewPagerAdapter(FragmentManager fm) {
         super(fm);
         fragments = new ArrayList<>();
         fragments.add(HighlightsFragment.newInstance());
