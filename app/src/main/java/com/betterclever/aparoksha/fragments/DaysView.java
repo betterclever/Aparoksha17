@@ -97,7 +97,7 @@ public class DaysView extends Fragment {
                         .into(viewHolder.getEventImageView());
 */
 
-                viewHolder.getDateTextView().setText(model.getDate());
+                viewHolder.getDateTextView().setText(model.getTime());
                 viewHolder.getEventNameTextView().setText(model.getName());
 
             }
