@@ -28,7 +28,7 @@ public class Experiment extends View {
     private void init() {
         path = new Path();
         path.addCircle(width/2,height/2,50, Path.Direction.CW);
-
+        p = new Paint();
         width = getMeasuredWidth();
         height = getMeasuredHeight();
     }

@@ -2,6 +2,7 @@ package com.betterclever.aparoksha.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -35,7 +36,7 @@ public class EventDetailActivity extends AppCompatActivity {
 		assignViews();
 
 		init(savedInstanceState);
-
+/*
 		teamSizeImageView.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -48,7 +49,20 @@ public class EventDetailActivity extends AppCompatActivity {
 						.capture(eventImageView)
 						.into(eventImageView);
 			}
-		});
+		});*/
+		final Handler handler = new Handler();
+		handler.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				Blurry.with(EventDetailActivity.this)
+					.radius(10)
+					.sampling(5)
+					.color(Color.argb(100, 1, 1, 1))
+					.async()
+					.capture(eventImageView)
+					.into(eventImageView);
+			}
+		}, 100);
 
 	}
 
@@ -70,8 +84,6 @@ public class EventDetailActivity extends AppCompatActivity {
 		spaceTabLayout = (SpaceTabLayout) findViewById(R.id.spaceTabLayout);
 		eventImageView = (ImageView) findViewById(R.id.eventImageView);
 		categoryImageView = (ImageView) findViewById(R.id.categoryImageView);
-		teamSizeImageView = (ImageView) findViewById(R.id.teamSizeImageView);
-		durationImageView = (ImageView) findViewById(R.id.durationImageView);
 
 	}
 
