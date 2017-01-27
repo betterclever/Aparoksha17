@@ -52,15 +52,25 @@ public class DaysViewActivity extends AppCompatActivity {
         gear2.startAnimation(rotate2);
 
 
-        new ParticleSystem(this, 80, R.drawable.line, 5000)
+        new ParticleSystem(this, 80, R.drawable.line, 500)
                 .setSpeedModuleAndAngleRange(0.3f, 0.7f, 120, 160)
                 .setAcceleration(0.00005f, 90)
-                .emit(520,960, 16);
-
-        new ParticleSystem(this, 80, R.drawable.line, 5000)
+                .emit(520,960, 8);
+    
+        new ParticleSystem(this, 80, R.drawable.line2, 500)
+            .setSpeedModuleAndAngleRange(0.3f, 0.7f, 120, 160)
+            .setAcceleration(0.00005f, 90)
+            .emit(520,960, 8);
+    
+        new ParticleSystem(this, 80, R.drawable.line, 500)
+            .setSpeedModuleAndAngleRange(0.3f, 0.7f, 300, 340)
+            .setAcceleration(0.00005f, 90)
+            .emit(680,750, 8);
+        
+        new ParticleSystem(this, 80, R.drawable.line2, 500)
                 .setSpeedModuleAndAngleRange(0.3f, 0.7f, 300, 340)
                 .setAcceleration(0.00005f, 90)
-                .emit(680,750, 16);
+                .emit(680,750, 8);
     }
 
 

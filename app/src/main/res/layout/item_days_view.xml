@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:layout_margin="10dp"
+
     app:cardBackgroundColor="#a6383535"
     app:cardCornerRadius="20dp">
 
@@ -39,6 +40,7 @@
             android:layout_marginTop="8dp"
             android:text="Sample Event Name"
             android:textSize="20sp"
+            android:textColor="@color/md_white_1000"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -57,6 +59,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="4:00 PM"
+            android:textColor="@color/md_white_1000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

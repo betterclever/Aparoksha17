@@ -13,9 +13,7 @@ import com.betterclever.aparoksha.R;
 public class HighlightsFragment extends Fragment {
 
 
-    public HighlightsFragment() {
-
-    }
+    public HighlightsFragment() {}
 
     public static HighlightsFragment newInstance() {
 

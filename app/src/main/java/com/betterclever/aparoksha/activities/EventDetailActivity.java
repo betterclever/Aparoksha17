@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.betterclever.aparoksha.R;
+import com.betterclever.aparoksha.fragments.Description;
+import com.betterclever.aparoksha.fragments.Organizer;
 import com.betterclever.aparoksha.fragments.TimeDate;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -70,8 +72,8 @@ public class EventDetailActivity extends AppCompatActivity {
 
 		List<Fragment> fragmentList = new ArrayList<>();
 		fragmentList.add(TimeDate.newInstance());
-		fragmentList.add(TimeDate.newInstance());
-		fragmentList.add(TimeDate.newInstance());
+		fragmentList.add(Description.newInstance());
+		fragmentList.add(Organizer.newInstance());
 
 		spaceTabLayout.initialize(viewPager, getSupportFragmentManager(),
 			fragmentList, savedInstanceState);
