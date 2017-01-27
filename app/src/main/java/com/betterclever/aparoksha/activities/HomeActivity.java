@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.betterclever.aparoksha.R;
 import com.betterclever.aparoksha.SwishyTransformer;
 import com.betterclever.aparoksha.adapters.HighlightsViewPagerAdapter;
+import com.betterclever.aparoksha.utils.AutoScrollViewPager;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -24,7 +25,7 @@ import jp.wasabeef.blurry.Blurry;
 public class HomeActivity extends AppCompatActivity {
 
     ImageView qrImageView, categoryImageView, dayImageView;
-    ViewPager viewPager;
+    AutoScrollViewPager viewPager;
 
     int currentPage = 0;
     Timer timer;
@@ -57,7 +58,9 @@ public class HomeActivity extends AppCompatActivity {
 
         viewPager.setAdapter(new HighlightsViewPagerAdapter(getSupportFragmentManager()));
         viewPager.setPageTransformer(true,new SwishyTransformer(this));
-
+        
+        viewPager.startAutoScroll(1000);
+		viewPager.setAutoScrollDurationFactor(10);
 /*
         final Handler handler = new Handler();
         final Runnable Update = new Runnable() {
@@ -129,7 +132,7 @@ public class HomeActivity extends AppCompatActivity {
         qrImageView = (ImageView) findViewById(R.id.qrImageView);
         categoryImageView = (ImageView) findViewById(R.id.categoryImageView);
         dayImageView = (ImageView) findViewById(R.id.dayImageVew);
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager = (AutoScrollViewPager) findViewById(R.id.viewPager);
 
     }
 
