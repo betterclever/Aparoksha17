@@ -51,6 +51,12 @@ public class HomeActivity extends AppCompatActivity {
                 HomeActivity.this.startActivity(new Intent( HomeActivity.this,DaysViewActivity.class));
             }
         });
+        categoryImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HomeActivity.this.startActivity(new Intent( HomeActivity.this,Categories.class));
+            }
+        });
         init();
     }
 
@@ -60,7 +66,7 @@ public class HomeActivity extends AppCompatActivity {
         viewPager.setPageTransformer(true,new SwishyTransformer(this));
         
         viewPager.startAutoScroll(1000);
-		viewPager.setAutoScrollDurationFactor(10);
+		viewPager.setAutoScrollDurationFactor(15);
 /*
         final Handler handler = new Handler();
         final Runnable Update = new Runnable() {

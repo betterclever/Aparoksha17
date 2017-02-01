@@ -51,9 +51,11 @@ dependencies {
     compile 'com.github.Jawnnypoo:PhysicsLayout:2.1.0'
     compile 'com.firebaseui:firebase-ui-database:1.1.1'
     compile 'com.firebaseui:firebase-ui-storage:1.1.1'
+    compile 'com.github.lukedeighton:wheelview:0.4.1'
     compile 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
     testCompile 'junit:junit:4.12'
 }
+
 
 
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.betterclever.aparoksha.activities.Categories">
+
+    <com.lukedeighton.wheelview.WheelView
+        android:id="@+id/wheelview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:wheelColor="@color/md_grey_900"
+        app:rotatableWheelDrawable="true"
+        app:selectionAngle="90.0"
+        app:wheelPosition="bottom"
+        app:wheelOffsetY="40dp"
+        app:repeatItems="true"
+        app:wheelRadius="match_parent"
+        app:wheelItemCount="14"
+        app:wheelPadding="20dp"
+        app:wheelItemRadius="30dp"/>
+
+</android.support.percent.PercentRelativeLayout>

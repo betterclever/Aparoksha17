@@ -18,8 +18,8 @@
 
     <ImageView
         android:id="@+id/dayImageVew"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
@@ -32,8 +32,8 @@
 
     <ImageView
         android:id="@+id/qrImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,8 +46,8 @@
 
     <ImageView
         android:id="@+id/categoryImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
@@ -109,7 +109,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="EVENTS BY DAY"
+        android:text="BY       DAY"
         android:textColor="@color/md_white_1000"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -132,7 +132,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="QR CODE SCAN"
+        android:text="QR SCAN"
         android:fontFamily="sans-serif-condensed"
         android:textColor="@color/md_white_1000"
         android:textSize="22sp"
@@ -152,15 +152,16 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="EVENTS BY CATEGORY"
+        android:text="BY CATEGORY"
         android:fontFamily="sans-serif-condensed"
         android:textStyle="bold"
         android:textColor="@color/md_white_1000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/categoryImageView"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="@+id/categoryImageView"
         app:layout_constraintRight_toRightOf="@+id/categoryImageView"
-        app:layout_constraintTop_toTopOf="@+id/categoryImageView" />
+        app:layout_constraintTop_toTopOf="@+id/categoryImageView"
+        app:layout_constraintVertical_bias="0.461"/>
 
 </android.support.constraint.ConstraintLayout>
