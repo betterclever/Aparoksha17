@@ -2,10 +2,12 @@ package com.betterclever.aparoksha.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -26,6 +28,7 @@ public class HomeActivity extends AppCompatActivity {
 
     ImageView qrImageView, categoryImageView, dayImageView;
     AutoScrollViewPager viewPager;
+    Toolbar toolbar;
 
     int currentPage = 0;
     Timer timer;
@@ -38,7 +41,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         assignViews();
-        blurViews();
+        
+        setSupportActionBar(toolbar);
+    
+        //blurViews();
         qrImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,6 +145,7 @@ public class HomeActivity extends AppCompatActivity {
         categoryImageView = (ImageView) findViewById(R.id.categoryImageView);
         dayImageView = (ImageView) findViewById(R.id.dayImageVew);
         viewPager = (AutoScrollViewPager) findViewById(R.id.viewPager);
+        toolbar = (Toolbar) findViewById(R.id.toolbar       );
 
     }
 

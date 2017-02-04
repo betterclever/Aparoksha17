@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.betterclever.aparoksha.R;
 import com.betterclever.aparoksha.fragments.HighlightsFragment;
 
 import java.util.ArrayList;
@@ -20,10 +21,10 @@ public class HighlightsViewPagerAdapter extends FragmentStatePagerAdapter {
     public HighlightsViewPagerAdapter(FragmentManager fm) {
         super(fm);
         fragments = new ArrayList<>();
-        fragments.add(HighlightsFragment.newInstance());
-        fragments.add(HighlightsFragment.newInstance());
-        fragments.add(HighlightsFragment.newInstance());
-        fragments.add(HighlightsFragment.newInstance());
+        fragments.add(HighlightsFragment.newInstance(R.drawable.sample));
+        fragments.add(HighlightsFragment.newInstance(R.drawable.hint));
+        fragments.add(HighlightsFragment.newInstance(R.drawable.sample));
+        fragments.add(HighlightsFragment.newInstance(R.drawable.hint));
 
     }
 
