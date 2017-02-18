@@ -2,6 +2,7 @@ package com.betterclever.aparoksha.activities;
 
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,12 +34,11 @@ public class CategoriesViewActivity extends AppCompatActivity {
     
     private static final String TAG = CategoriesViewActivity.class.getSimpleName();
     private WheelView wheelView;
-    private RecyclerView recyclerView;
     
     String categories[] = {"Web", "Coding", "Flagship"};
     
     ArrayList<Categories> fragments;
-    ArrayList<FirebaseIndexRecyclerAdapter> adapters;
+    FragmentManager fm;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,23 +51,34 @@ public class CategoriesViewActivity extends AppCompatActivity {
     
     private void init() {
         
-        adapters = new ArrayList<>();
         fragments = new ArrayList<>();
         
-        initAdapters();
+        fm = getSupportFragmentManager();
+        
+        //initAdapters();
         initFragments();
         
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
         
         wheelView.setAdapter(new WheelAdapter() {
             @Override
             public Drawable getDrawable(int position) {
-                return ContextCompat.getDrawable(CategoriesViewActivity.this, R.drawable.ic_team);
+                switch (position){
+                    case 0:return ContextCompat.getDrawable(CategoriesViewActivity.this, R.drawable.symbol);
+                    case 1:return ContextCompat.getDrawable(CategoriesViewActivity.this, R.drawable.computer);
+                    case 2:return ContextCompat.getDrawable(CategoriesViewActivity.this, R.drawable.android);
+                    case 3:return ContextCompat.getDrawable(CategoriesViewActivity.this, R.drawable.web);
+                    case 4:return ContextCompat.getDrawable(CategoriesViewActivity.this, R.drawable.quiz);
+                    case 5:return ContextCompat.getDrawable(CategoriesViewActivity.this, R.drawable.game);
+                    case 6:return ContextCompat.getDrawable(CategoriesViewActivity.this, R.drawable.electronics);
+                    
+                    default: return ContextCompat.getDrawable(CategoriesViewActivity.this, R.drawable.ic_team);
+                }
             }
             
             @Override
             public int getCount() {
-                return 6;
+                return 7;
             }
         });
         
@@ -80,12 +91,13 @@ public class CategoriesViewActivity extends AppCompatActivity {
                 Log.i("position", String.valueOf(position));
                 if (position%2 == 1) {
                     Log.i("position", "Web");
-                    recyclerView.setAdapter(adapters.get(position%2));
+                    showFragment(position%2);
+    
                 }
                 
                 if (position%2 == 0) {
                     Log.i("position", "coding");
-                    recyclerView.setAdapter(adapters.get(position%2));
+                    showFragment(position%2);
                 }
             }
         });
@@ -97,39 +109,56 @@ public class CategoriesViewActivity extends AppCompatActivity {
             fragments.add(Categories.newInstance(category));
         }
         
-        
+        getSupportFragmentManager().beginTransaction()
+            .setCustomAnimations(android.R.anim.slide_in_left,0,0,android.R.anim.slide_out_right)
+            .add(R.id.frame_container,fragments.get(0),categories[0]).commit();
     }
     
-    private void initAdapters() {
-        
-        DatabaseReference eventsRef = FirebaseDatabase.getInstance().getReference().child("events");
-        DatabaseReference categoryRef = FirebaseDatabase.getInstance().getReference().child("categories");
-        
-        for (String category : categories) {
-            DatabaseReference keyRef = categoryRef.child(category);
-            
-            final FirebaseIndexRecyclerAdapter firebaseRecyclerAdapter =
-                new FirebaseIndexRecyclerAdapter<Event, EventItemViewHolder>(
-                    Event.class,
-                    R.layout.item_days_view,
-                    EventItemViewHolder.class,
-                    keyRef,
-                    eventsRef) {
-                    @Override
-                    protected void populateViewHolder(EventItemViewHolder viewHolder,
-                                                      Event model, int position) {
-                        viewHolder.getDateTextView().setText(model.getTime());
-                        viewHolder.getEventNameTextView().setText(model.getName());
-                    }
-                };
-            adapters.add(firebaseRecyclerAdapter);
-        }
-        
-    }
     
     private void assignViews() {
         wheelView = (WheelView) findViewById(R.id.wheelview);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+    }
+    
+    private void showFragment(int position){
+        
+        if( fm.getFragments().contains(fragments.get(position))){
+            for(Fragment f: fm.getFragments()){
+                fm.beginTransaction()
+                    .setCustomAnimations(
+                        android.R.anim.slide_in_left,
+                        android.R.anim.slide_out_right,
+                        android.R.anim.slide_in_left,
+                        android.R.anim.slide_out_right)
+                    .hide(f)
+                    .commit();
+            }
+            fm.beginTransaction()
+                .setCustomAnimations(
+                    android.R.anim.slide_in_left,
+                    android.R.anim.slide_out_right,
+                    android.R.anim.slide_in_left,
+                    android.R.anim.slide_out_right)
+                .show(fragments.get(position)).commit();
+        }
+        else {
+            for(Fragment f: fm.getFragments()){
+                fm.beginTransaction()
+                    .setCustomAnimations(
+                        android.R.anim.slide_in_left,
+                        android.R.anim.slide_out_right,
+                        android.R.anim.slide_in_left,
+                        android.R.anim.slide_out_right)
+                    .hide(f).commit();
+            }
+            fm.beginTransaction()
+                .setCustomAnimations(
+                    android.R.anim.slide_in_left,
+                    android.R.anim.slide_out_right,
+                    android.R.anim.slide_in_left,
+                    android.R.anim.slide_out_right)
+                .add(R.id.frame_container, fragments.get(position)).commit();
+        }
+        
     }
     
     

@@ -24,8 +24,8 @@
         app:wheelPadding="20dp"
         app:wheelItemRadius="40dp"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <FrameLayout
+        android:id="@+id/frame_container"
         app:layout_widthPercent="60%"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"

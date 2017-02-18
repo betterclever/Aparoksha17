@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 public class Categories extends Fragment {
     
+    private static final String TAG = Categories.class.getSimpleName();
     String category;
     RecyclerView recyclerView;
     
@@ -41,19 +43,20 @@ public class Categories extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        
         View v = inflater.inflate(R.layout.fragment_categories, container, false);
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
         
-        setupRecycleView();
-        
+        setupRecyclerView();
         return v;
     }
     
-    private void setupRecycleView() {
+    private void setupRecyclerView() {
         
         DatabaseReference eventsRef = FirebaseDatabase.getInstance().getReference("events");
         DatabaseReference keyRef = FirebaseDatabase.getInstance().getReference("categories").child(category);
-        
+    
+        Log.d(TAG, "setupRecycleView() called");
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         
         final FirebaseIndexRecyclerAdapter firebaseRecyclerAdapter =
@@ -68,7 +71,6 @@ public class Categories extends Fragment {
                                                   Event model, int position) {
                     viewHolder.getDateTextView().setText(model.getTime());
                     viewHolder.getEventNameTextView().setText(model.getName());
-                    
                 }
             };
         
