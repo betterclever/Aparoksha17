@@ -15,8 +15,8 @@ public class SwishyTransformer implements ViewPager.PageTransformer {
 
     public static final float MIN_SCALE = 0.2f;
 
-    public ImageView imageView;
-    public RelativeLayout.LayoutParams params;
+    private ImageView imageView;
+    private RelativeLayout.LayoutParams params;
 
     public SwishyTransformer(Context context){
         imageView = (ImageView) LayoutInflater.from(context).inflate(R.layout.aparoksha_logo,null);
@@ -27,7 +27,7 @@ public class SwishyTransformer implements ViewPager.PageTransformer {
     public void transformPage(View page, float position) {
 
 
-        System.out.println("position " + position);
+        //System.out.println("position " + position);
         if(position < -1){
 
         }
@@ -76,7 +76,7 @@ public class SwishyTransformer implements ViewPager.PageTransformer {
             float scaleFactor = 1 - 2 * Math.abs(position);
             page.setScaleY(scaleFactor);
             page.setScaleX(scaleFactor);
-            System.out.println("pw : "+page.getWidth());
+            //System.out.println("pw : "+page.getWidth());
             page.setTranslationX((1-scaleFactor)/2f * page.getWidth());
         }
 
@@ -94,7 +94,7 @@ public class SwishyTransformer implements ViewPager.PageTransformer {
             float scaleFactor = 1 - 2 * Math.abs(position);
             page.setScaleY(scaleFactor);
             page.setScaleX(scaleFactor);
-            System.out.println("pw : "+page.getWidth());
+            //System.out.println("pw : "+page.getWidth());
             page.setTranslationX(- (1-scaleFactor)/2f * page.getWidth());
         }
 
@@ -102,7 +102,7 @@ public class SwishyTransformer implements ViewPager.PageTransformer {
             //0.4 to 0.6
             page.setScaleX(0.2f);
             page.setScaleY(0.2f);
-            System.out.println("pw : "+page.getWidth());
+            //System.out.println("pw : "+page.getWidth());
             page.setTranslationX(- 0.4f * page.getWidth());
 
             RelativeLayout rl = (RelativeLayout) page;
@@ -119,7 +119,7 @@ public class SwishyTransformer implements ViewPager.PageTransformer {
             //0.6 to 1
             page.setScaleX(0.2f);
             page.setScaleY(0.2f);
-            System.out.println("pw : "+page.getWidth());
+            //System.out.println("pw : "+page.getWidth());
             page.setTranslationX(- 0.4f * page.getWidth());
 
 
@@ -133,4 +133,5 @@ public class SwishyTransformer implements ViewPager.PageTransformer {
         }
         
     }
+    
 }

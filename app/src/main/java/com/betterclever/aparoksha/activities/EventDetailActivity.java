@@ -85,7 +85,7 @@ public class EventDetailActivity extends AppCompatActivity {
 		viewPager = (ViewPager) findViewById(R.id.viewPager);
 		spaceTabLayout = (SpaceTabLayout) findViewById(R.id.spaceTabLayout);
 		eventImageView = (ImageView) findViewById(R.id.eventImageView);
-		categoryImageView = (ImageView) findViewById(R.id.categoryImageView);
+		//categoryImageView = (ImageView) findViewById(R.id.categoryImageView);
 
 	}
 

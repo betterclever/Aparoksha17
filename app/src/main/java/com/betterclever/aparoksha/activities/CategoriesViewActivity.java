@@ -27,6 +27,7 @@ import com.lukedeighton.wheelview.transformer.WheelItemTransformer;
 import com.lukedeighton.wheelview.transformer.WheelSelectionTransformer;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class CategoriesViewActivity extends AppCompatActivity {
     
@@ -36,7 +37,7 @@ public class CategoriesViewActivity extends AppCompatActivity {
     
     String categories[] = {"Web", "Coding", "Flagship"};
     
-    
+    ArrayList<Categories> fragments;
     ArrayList<FirebaseIndexRecyclerAdapter> adapters;
     
     @Override
@@ -51,7 +52,11 @@ public class CategoriesViewActivity extends AppCompatActivity {
     private void init() {
         
         adapters = new ArrayList<>();
+        fragments = new ArrayList<>();
+        
         initAdapters();
+        initFragments();
+        
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         
         wheelView.setAdapter(new WheelAdapter() {
@@ -84,6 +89,14 @@ public class CategoriesViewActivity extends AppCompatActivity {
                 }
             }
         });
+        
+    }
+    
+    private void initFragments() {
+        for(String category: categories){
+            fragments.add(Categories.newInstance(category));
+        }
+        
         
     }
     

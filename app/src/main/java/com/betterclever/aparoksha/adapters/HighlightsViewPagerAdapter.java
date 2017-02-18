@@ -3,6 +3,7 @@ package com.betterclever.aparoksha.adapters;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.util.Log;
 
 import com.betterclever.aparoksha.R;
 import com.betterclever.aparoksha.fragments.HighlightsFragment;
@@ -16,7 +17,7 @@ import java.util.List;
 
 public class HighlightsViewPagerAdapter extends FragmentStatePagerAdapter {
 
-    List<Fragment> fragments;
+    private List<HighlightsFragment> fragments;
 
     public HighlightsViewPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -36,5 +37,12 @@ public class HighlightsViewPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public int getCount() {
         return fragments.size();
+    }
+    
+    public void reset(){
+        for(HighlightsFragment f: fragments){
+            f.reset();
+            Log.i("Hi","reseting");
+        }
     }
 }
