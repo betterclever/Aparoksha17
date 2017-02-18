@@ -1,4 +1,4 @@
-package com.betterclever.aparoksha;
+package com.betterclever.aparoksha.fragments;
 
 
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.betterclever.aparoksha.R;
 
 /**
  * Created by betterclever on 12/21/2016.

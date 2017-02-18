@@ -5,21 +5,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.betterclever.aparoksha.activities.Categories">
+    android:background="@drawable/tapetbg2"
+    tools:context="com.betterclever.aparoksha.activities.CategoriesViewActivity">
 
     <com.lukedeighton.wheelview.WheelView
         android:id="@+id/wheelview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:wheelColor="@color/md_grey_900"
+        app:selectionColor="@color/colorAccent"
+        app:wheelColor="#66919191"
         app:rotatableWheelDrawable="true"
-        app:selectionAngle="90.0"
-        app:wheelPosition="bottom"
-        app:wheelOffsetY="40dp"
+        app:selectionAngle="0.0"
+        app:wheelPosition="left"
+        app:wheelOffsetX="-40dp"
         app:repeatItems="true"
         app:wheelRadius="match_parent"
-        app:wheelItemCount="14"
+        app:wheelItemCount="6"
         app:wheelPadding="20dp"
-        app:wheelItemRadius="30dp"/>
+        app:wheelItemRadius="40dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        app:layout_widthPercent="60%"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"/>
 
 </android.support.percent.PercentRelativeLayout>
