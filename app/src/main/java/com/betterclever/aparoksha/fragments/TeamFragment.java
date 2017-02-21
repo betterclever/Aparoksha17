@@ -13,15 +13,15 @@ import com.betterclever.aparoksha.R;
  * Created by betterclever on 12/21/2016.
  */
 
-public class Developers extends Fragment {
+public class TeamFragment extends Fragment {
 
-	public Developers() {}
+	public TeamFragment() {}
 
-	public static Developers newInstance() {
+	public static TeamFragment newInstance() {
 
 		Bundle args = new Bundle();
 
-		Developers fragment = new Developers();
+		TeamFragment fragment = new TeamFragment();
 		fragment.setArguments(args);
 
 		return fragment;
@@ -31,7 +31,7 @@ public class Developers extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 
-		return inflater.inflate(R.layout.fragment_developers, container, false);
+		return inflater.inflate(R.layout.fragment_team, container, false);
 	}
 
 }

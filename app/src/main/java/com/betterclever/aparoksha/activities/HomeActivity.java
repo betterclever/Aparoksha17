@@ -12,8 +12,9 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.betterclever.aparoksha.R;
-import com.betterclever.aparoksha.fragments.Developers;
+import com.betterclever.aparoksha.fragments.TeamFragment;
 import com.betterclever.aparoksha.fragments.HomeFragment;
+import com.betterclever.aparoksha.fragments.UpdatesFragment;
 
 public class HomeActivity extends AppCompatActivity {
     
@@ -21,7 +22,7 @@ public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Toolbar toolbar;
     
-    Fragment homeFragment,developersFragment,contactFragment;
+    Fragment homeFragment,developersFragment, updatesFragment;
     
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
         = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -29,14 +30,14 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_developers:
+                case R.id.navigation_team:
                     setFragment(developersFragment);
                     return true;
                 case R.id.navigation_home:
                     setFragment(homeFragment);
                     return true;
-                case R.id.navigation_contact:
-                    setFragment(contactFragment);
+                case R.id.navigation_updates:
+                    setFragment(updatesFragment);
                     return true;
             }
             return false;
@@ -60,8 +61,8 @@ public class HomeActivity extends AppCompatActivity {
     
     private void init() {
         homeFragment = HomeFragment.newInstance();
-        developersFragment = Developers.newInstance();
-        contactFragment = Developers.newInstance();
+        developersFragment = TeamFragment.newInstance();
+        updatesFragment = UpdatesFragment.newInstance();
     
         setFragment(homeFragment);
         

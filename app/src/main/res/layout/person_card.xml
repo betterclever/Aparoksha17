@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="170dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.betterclever.aparoksha.widgets.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="match_parent"
+                app:layout_heightPercent="65%"
+                app:srcCompat="@drawable/sample2"/>
+
+            <TextView
+                android:id="@+id/person_name_textview"
+                android:layout_width="match_parent"
+                android:layout_below="@id/profile_image"
+                android:gravity="center"
+                android:padding="2dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_heightPercent="15%"
+                tools:text="Pranjal Paliwal"/>
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:text="Call"
+                android:textSize="10sp"
+                app:layout_heightPercent="12%"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/person_name_textview"/>
+
+        </android.support.percent.PercentRelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>
