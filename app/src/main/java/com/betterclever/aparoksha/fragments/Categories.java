@@ -14,9 +14,13 @@ import android.view.ViewGroup;
 import com.betterclever.aparoksha.R;
 import com.betterclever.aparoksha.model.Event;
 import com.betterclever.aparoksha.viewholder.EventItemViewHolder;
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseIndexRecyclerAdapter;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 /**
  * Created by betterclever on 15/02/2016
@@ -71,6 +75,15 @@ public class Categories extends Fragment {
                                                   Event model, int position) {
                     viewHolder.getDateTextView().setText(model.getTime());
                     viewHolder.getEventNameTextView().setText(model.getName());
+    
+                    StorageReference ref = FirebaseStorage.getInstance().getReference().child(model.getImage());
+                    
+                    Log.d(TAG,ref.toString());
+                    
+                    Glide.with(getActivity())
+                        .using(new FirebaseImageLoader())
+                        .load(ref)
+                        .into(viewHolder.getEventImageView());
                 }
             };
         

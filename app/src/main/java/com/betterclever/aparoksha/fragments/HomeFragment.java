@@ -16,6 +16,7 @@ import com.betterclever.aparoksha.R;
 import com.betterclever.aparoksha.SwishyTransformer;
 import com.betterclever.aparoksha.activities.CategoriesViewActivity;
 import com.betterclever.aparoksha.activities.DaysViewActivity;
+import com.betterclever.aparoksha.activities.EventDetailActivity;
 import com.betterclever.aparoksha.adapters.HighlightsViewPagerAdapter;
 import com.betterclever.aparoksha.utils.AutoScrollViewPager;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -99,7 +100,8 @@ public class HomeFragment extends Fragment {
             if (result.getContents() == null) {
                 Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(getContext(), "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getActivity(),EventDetailActivity.class));
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

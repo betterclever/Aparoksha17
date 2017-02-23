@@ -1,8 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
              tools:context="com.betterclever.aparoksha.fragments.TeamFragment">
 
     <android.support.percent.PercentRelativeLayout
@@ -11,34 +11,39 @@
 
         <TextView
             android:id="@+id/team_title"
-            android:text="Team Aparoksha"
-            android:textSize="20sp"
-            android:padding="10dp"
+            android:layout_width="match_parent"
             android:gravity="center"
-            app:layout_heightPercent="10%"
-            android:layout_width="match_parent"/>
+            android:padding="5dp"
+            android:text="Team Aparoksha"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"/>
 
         <android.support.v7.widget.RecyclerView
-            android:layout_below="@id/team_title"
             android:id="@+id/team_recyclerview"
             android:layout_width="match_parent"
-            app:layout_heightPercent="40%" />
+            android:layout_below="@id/team_title"
+            android:paddingLeft="15dp"
+            app:layout_heightPercent="40%"/>
 
         <TextView
             android:id="@+id/developers_title"
-            android:text="Developed by"
+            android:layout_width="match_parent"
             android:layout_below="@id/team_recyclerview"
-            android:textSize="20sp"
-            android:padding="10dp"
             android:gravity="center"
-            app:layout_heightPercent="10%"
-            android:layout_width="match_parent"/>
+            android:padding="5dp"
+            android:text="Developed by"
+            android:textColor="@color/md_blue_900"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/developers_recyclerview"
             android:layout_width="match_parent"
+            android:paddingLeft="15dp"
             android:layout_below="@id/developers_title"
-            app:layout_heightPercent="40%" />
+            app:layout_heightPercent="40%"/>
 
     </android.support.percent.PercentRelativeLayout>
 

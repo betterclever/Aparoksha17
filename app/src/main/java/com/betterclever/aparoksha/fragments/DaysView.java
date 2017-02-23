@@ -88,14 +88,16 @@ public class DaysView extends Fragment {
 
 
                 Log.i("Hi","Yo");
-/*
+    
                 StorageReference ref = FirebaseStorage.getInstance().getReference().child(model.getImage());
-
+                
+                Log.d(TAG,ref.toString());
+    
                 Glide.with(getActivity())
                         .using(new FirebaseImageLoader())
                         .load(ref)
                         .into(viewHolder.getEventImageView());
-*/
+
 
                 viewHolder.getDateTextView().setText(model.getTime());
                 viewHolder.getEventNameTextView().setText(model.getName());
