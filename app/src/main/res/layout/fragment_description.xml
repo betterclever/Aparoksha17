@@ -27,12 +27,14 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
 
             <TextView
+                android:id="@+id/description_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textView"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:layout_margin="10dp"
+                android:maxLines="6"
                 android:text="@string/description"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 

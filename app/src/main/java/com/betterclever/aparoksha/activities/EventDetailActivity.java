@@ -1,112 +1,127 @@
 package com.betterclever.aparoksha.activities;
 
-import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.os.Handler;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.betterclever.aparoksha.R;
-import com.betterclever.aparoksha.fragments.Description;
-import com.betterclever.aparoksha.fragments.Organizer;
-import com.betterclever.aparoksha.fragments.TimeDate;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
+import com.betterclever.aparoksha.fragments.DescriptionFragment;
+import com.betterclever.aparoksha.fragments.OrganizerFragment;
+import com.betterclever.aparoksha.fragments.TimeDateFragment;
+import com.betterclever.aparoksha.model.Event;
+import com.betterclever.aparoksha.widgets.CircleImageView;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import eu.long1.spacetablayout.SpaceTabLayout;
 import jp.wasabeef.blurry.Blurry;
 
-public class EventDetailActivity extends AppCompatActivity {
-
-	ViewPager viewPager;
-	SpaceTabLayout spaceTabLayout;
-	ImageView eventImageView, categoryImageView, teamSizeImageView, durationImageView;
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_event_detail);
-
-		assignViews();
-
-		init(savedInstanceState);
-/*
-		teamSizeImageView.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-
-				Blurry.with(EventDetailActivity.this)
-						.radius(5)
-						.sampling(2)
-						.color(Color.argb(100, 0, 0, 0))
-						.async()
-						.capture(eventImageView)
-						.into(eventImageView);
-			}
-		});*/
-		final Handler handler = new Handler();
-		handler.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				Blurry.with(EventDetailActivity.this)
-					.radius(10)
-					.sampling(5)
-					.color(Color.argb(100, 1, 1, 1))
-					.async()
-					.capture(eventImageView)
-					.into(eventImageView);
-			}
-		}, 100);
-
-	}
-
-	private void init(Bundle savedInstanceState) {
-
-		List<Fragment> fragmentList = new ArrayList<>();
-		fragmentList.add(TimeDate.newInstance());
-		fragmentList.add(Description.newInstance());
-		fragmentList.add(Organizer.newInstance());
-
-		spaceTabLayout.initialize(viewPager, getSupportFragmentManager(),
-			fragmentList, savedInstanceState);
-
-	}
-
-	private void assignViews() {
-
-		viewPager = (ViewPager) findViewById(R.id.viewPager);
-		spaceTabLayout = (SpaceTabLayout) findViewById(R.id.spaceTabLayout);
-		eventImageView = (ImageView) findViewById(R.id.eventImageView);
-		//categoryImageView = (ImageView) findViewById(R.id.categoryImageView);
-
-	}
-
-
-    private void startScan(){
-
-        new IntentIntegrator(this).initiateScan();
-
-    }
-
+public class EventDetailActivity extends AppCompatActivity implements ValueEventListener {
+    
+    @BindView(R.id.viewPager)
+    ViewPager viewPager;
+    @BindView(R.id.spaceTabLayout)
+    SpaceTabLayout spaceTabLayout;
+    @BindView(R.id.eventImageView)
+    ImageView eventImageView;
+    @BindView(R.id.category_imageview)
+    ImageView categoryImageview;
+    @BindView(R.id.event_image_view_circle)
+    CircleImageView eventImageViewCircle;
+    @BindView(R.id.eventTitleTextView)
+    TextView eventTitleTextView;
+    @BindView(R.id.team_imageview)
+    ImageView teamImageview;
+    
+    DatabaseReference eventDbRef;
+    StorageReference imageStorageRef;
+    
+    TimeDateFragment timeDateFragment;
+    DescriptionFragment descriptionFragment;
+    OrganizerFragment organizerFragment;
+    
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if(result != null) {
-            if(result.getContents() == null) {
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-            }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_event_detail);
+        ButterKnife.bind(this);
+        init(savedInstanceState);
+        
+        String eventID = getIntent().getStringExtra("eventID");
+        eventDbRef = FirebaseDatabase.getInstance().getReference().child("events").child(eventID);
+        
+        eventDbRef.addValueEventListener(this);
+    }
+    
+    private void init(Bundle savedInstanceState) {
+        
+        List<Fragment> fragmentList = new ArrayList<>();
+        timeDateFragment = TimeDateFragment.newInstance();
+        descriptionFragment = DescriptionFragment.newInstance();
+        organizerFragment = OrganizerFragment.newInstance();
+        
+        fragmentList.add(timeDateFragment);
+        fragmentList.add(descriptionFragment);
+        fragmentList.add(organizerFragment);
+        
+        spaceTabLayout.initialize(viewPager, getSupportFragmentManager(),
+            fragmentList, savedInstanceState);
+    }
+    
+    @Override
+    public void onDataChange(DataSnapshot dataSnapshot) {
+        
+        Event event = dataSnapshot.getValue(Event.class);
+        imageStorageRef = FirebaseStorage.getInstance().getReference().child(event.getImage());
+        
+        descriptionFragment.setDescription(event.getDescription());
+        timeDateFragment.update(event);
+        organizerFragment.update(event.getOrganizers());
+        
+        eventTitleTextView.setText(event.getName());
+        
+        Glide
+            .with(this)
+            .using(new FirebaseImageLoader())
+            .load(imageStorageRef)
+            .asBitmap()
+            .into(new SimpleTarget<Bitmap>(500,500) {
+                @Override
+                public void onResourceReady(Bitmap resource, GlideAnimation glideAnimation) {
+                    Blurry.with(EventDetailActivity.this)
+                        .from(resource)
+                        .into(eventImageView);
+                    
+                    eventImageViewCircle.setImageBitmap(resource);
+                }
+            });
+        
+    }
+    
+    @Override
+    public void onCancelled(DatabaseError databaseError) {
+        
     }
 }
