@@ -11,8 +11,10 @@ import android.widget.TextView;
 
 import com.betterclever.aparoksha.R;
 import com.betterclever.aparoksha.fragments.DescriptionFragment;
+import com.betterclever.aparoksha.fragments.ExtraInfoFragment;
 import com.betterclever.aparoksha.fragments.OrganizerFragment;
 import com.betterclever.aparoksha.fragments.TimeDateFragment;
+import com.betterclever.aparoksha.fragments.UpdatesFragment;
 import com.betterclever.aparoksha.model.Event;
 import com.betterclever.aparoksha.widgets.CircleImageView;
 import com.bumptech.glide.Glide;
@@ -57,19 +59,23 @@ public class EventDetailActivity extends AppCompatActivity implements ValueEvent
     
     DatabaseReference eventDbRef;
     StorageReference imageStorageRef;
+    String eventID;
     
     TimeDateFragment timeDateFragment;
     DescriptionFragment descriptionFragment;
     OrganizerFragment organizerFragment;
+    ExtraInfoFragment extraInfoFragment;
+    UpdatesFragment updatesFragment;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_detail);
         ButterKnife.bind(this);
+    
+        eventID = getIntent().getStringExtra("eventID");
         init(savedInstanceState);
         
-        String eventID = getIntent().getStringExtra("eventID");
         eventDbRef = FirebaseDatabase.getInstance().getReference().child("events").child(eventID);
         
         eventDbRef.addValueEventListener(this);
@@ -77,14 +83,21 @@ public class EventDetailActivity extends AppCompatActivity implements ValueEvent
     
     private void init(Bundle savedInstanceState) {
         
+        String extraInfoRefPath = "events/"+eventID+"/extrainfo";
+        
         List<Fragment> fragmentList = new ArrayList<>();
+        
         timeDateFragment = TimeDateFragment.newInstance();
         descriptionFragment = DescriptionFragment.newInstance();
         organizerFragment = OrganizerFragment.newInstance();
+        extraInfoFragment = ExtraInfoFragment.newInstance(extraInfoRefPath);
+        updatesFragment = UpdatesFragment.newInstance(eventID);
         
         fragmentList.add(timeDateFragment);
         fragmentList.add(descriptionFragment);
         fragmentList.add(organizerFragment);
+        fragmentList.add(extraInfoFragment);
+        fragmentList.add(updatesFragment);
         
         spaceTabLayout.initialize(viewPager, getSupportFragmentManager(),
             fragmentList, savedInstanceState);
@@ -99,7 +112,6 @@ public class EventDetailActivity extends AppCompatActivity implements ValueEvent
         descriptionFragment.setDescription(event.getDescription());
         timeDateFragment.update(event);
         organizerFragment.update(event.getOrganizers());
-        
         eventTitleTextView.setText(event.getName());
         
         Glide

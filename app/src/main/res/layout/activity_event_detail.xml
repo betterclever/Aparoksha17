@@ -35,11 +35,11 @@
 
         app:icon_one="@drawable/ic_timer_black_24dp"
         app:icon_two="@drawable/ic_info_black_24dp"
+        app:icon_three="@drawable/ic_person_black_24dp"
+        app:icon_four="@drawable/ic_extra_info_black_24dp"
+        app:icon_five="@drawable/ic_updates_black_24dp"
 
-        app:text_one="Time"
-        app:text_two="Info"
-        app:text_three="Call"
-        app:number_of_tabs="three"
+        app:number_of_tabs="five"
         app:starting_position="two"/>
 
     <ImageView

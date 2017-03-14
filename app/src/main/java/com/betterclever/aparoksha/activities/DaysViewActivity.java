@@ -29,7 +29,7 @@ public class DaysViewActivity extends AppCompatActivity {
 
         viewPager.setAdapter(new DaysViewPagerAdapter(getSupportFragmentManager()));
         tabStrip.setViewPager(viewPager,0);
-        tabStrip.setTitles("Day 1", "Day 2", "Day 3");
+        tabStrip.setTitles("Day 0" ,"Day 1", "Day 2", "Day 3");
 
         gear1 = (ImageView) findViewById(R.id.gear1);
         gear2 = (ImageView) findViewById(R.id.gear2);
@@ -50,27 +50,7 @@ public class DaysViewActivity extends AppCompatActivity {
 
         gear1.startAnimation(rotate);
         gear2.startAnimation(rotate2);
-
-
-        /*new ParticleSystem(this, 80, R.drawable.line, 500)
-                .setSpeedModuleAndAngleRange(0.3f, 0.7f, 120, 160)
-                .setAcceleration(0.00005f, 90)
-                .emit(520,960, 8);
-    
-        new ParticleSystem(this, 80, R.drawable.line2, 500)
-            .setSpeedModuleAndAngleRange(0.3f, 0.7f, 120, 160)
-            .setAcceleration(0.00005f, 90)
-            .emit(520,960, 8);
-    
-        new ParticleSystem(this, 80, R.drawable.line, 500)
-            .setSpeedModuleAndAngleRange(0.3f, 0.7f, 300, 340)
-            .setAcceleration(0.00005f, 90)
-            .emit(680,750, 8);
         
-        new ParticleSystem(this, 80, R.drawable.line2, 500)
-                .setSpeedModuleAndAngleRange(0.3f, 0.7f, 300, 340)
-                .setAcceleration(0.00005f, 90)
-                .emit(680,750, 8);*/
     }
 
 

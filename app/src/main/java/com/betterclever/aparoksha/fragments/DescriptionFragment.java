@@ -22,6 +22,8 @@ public class DescriptionFragment extends Fragment {
     @BindView(R.id.description_textview)
     TextView descriptionTextView;
     
+    String description = "";
+    
     public DescriptionFragment() {
     }
     
@@ -39,11 +41,13 @@ public class DescriptionFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_description, container, false);
         ButterKnife.bind(this, view);
+        descriptionTextView.setText(description);
         return view;
         
     }
     
     public void setDescription(String description) {
+        this.description = description;
         descriptionTextView.setText(description);
     }
 }

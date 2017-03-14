@@ -73,30 +73,38 @@ public class OrganizerFragment extends Fragment {
     }
     
     public void update(List<Organizer> organizers) {
-        scrollableLayout.removeAllViews();
-        this.organizers.clear();
-        this.organizers.addAll(organizers);
+
+        if(organizers == null){
+            return;
+        }
+        
+        if(scrollableLayout!=null ) {
+            
+            scrollableLayout.removeAllViews();
+            this.organizers.clear();
+            this.organizers.addAll(organizers);
     
-        LayoutInflater inflater = LayoutInflater.from(getContext());
-        for(Organizer organizer: organizers){
+            LayoutInflater inflater = LayoutInflater.from(getContext());
+            for (Organizer organizer : organizers) {
         
-            View child = inflater.inflate(R.layout.card_organizer,scrollView,false);
+                View child = inflater.inflate(R.layout.card_organizer, scrollView, false);
         
-            TextView organizerName = (TextView) child.findViewById(R.id.organizer_name);
-            TextView organizerPhone = (TextView) child.findViewById(R.id.organizer_phone);
-            Button callButton = (Button) child.findViewById(R.id.call_button);
+                TextView organizerName = (TextView) child.findViewById(R.id.organizer_name);
+                TextView organizerPhone = (TextView) child.findViewById(R.id.organizer_phone);
+                Button callButton = (Button) child.findViewById(R.id.call_button);
         
-            organizerName.setText(organizer.getName());
-            organizerPhone.setText(organizer.getPhone());
+                organizerName.setText(organizer.getName());
+                organizerPhone.setText(organizer.getPhone());
         
-            callButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //TODO: Perform Call
-                }
-            });
+                callButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //TODO: Perform Call
+                    }
+                });
         
-            scrollableLayout.addView(child);
+                scrollableLayout.addView(child);
+            }
         }
         
     }

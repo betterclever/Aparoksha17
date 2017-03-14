@@ -32,7 +32,7 @@ public class DaysView extends Fragment {
 
     public static final String TAG = DaysView.class.getSimpleName();
 
-    String date = "23-03-2017";
+    String date = "24-03-2017";
 
     public DaysView() {}
 

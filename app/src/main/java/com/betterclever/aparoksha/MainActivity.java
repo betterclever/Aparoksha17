@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 				
 				Intent intent = new Intent(MainActivity.this,EventDetailActivity.class);
-				intent.putExtra("eventID","102");
+				intent.putExtra("eventID","104");
 				startActivity(intent);
 
 				/*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

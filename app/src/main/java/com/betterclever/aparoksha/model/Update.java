@@ -5,6 +5,7 @@ package com.betterclever.aparoksha.model;
  */
 
 public class Update {
+    
     private String title;
     private String eventID;
     private String message;

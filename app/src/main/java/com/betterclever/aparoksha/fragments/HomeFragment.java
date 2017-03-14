@@ -1,6 +1,5 @@
 package com.betterclever.aparoksha.fragments;
 
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -100,8 +99,23 @@ public class HomeFragment extends Fragment {
             if (result.getContents() == null) {
                 Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_LONG).show();
             } else {
-                //Toast.makeText(getContext(), "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-                startActivity(new Intent(getActivity(),EventDetailActivity.class));
+                String scannedString = result.getContents();
+                if(scannedString.endsWith("aparoksha17-made-by-betterclever")){
+                    try {
+                        int code = Integer.parseInt(scannedString.substring(0, 3));
+                        if(code <= 130 && code >= 100) {
+                            Intent intent = new Intent(getActivity(),EventDetailActivity.class);
+                            intent.putExtra("eventID",Integer.toString(code));
+                            startActivity(intent);
+                        }
+                        else {
+                            Toast.makeText(getContext(), "Invalid QR Code", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    catch (NumberFormatException e){
+                        Toast.makeText(getContext(), "Invalid QR Code", Toast.LENGTH_LONG).show();
+                    }
+                }
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
