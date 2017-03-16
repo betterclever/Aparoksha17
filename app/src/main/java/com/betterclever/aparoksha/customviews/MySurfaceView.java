@@ -16,6 +16,4 @@ public class MySurfaceView extends GLSurfaceView {
         super(context, attrs);
     }
 
-
-
 }

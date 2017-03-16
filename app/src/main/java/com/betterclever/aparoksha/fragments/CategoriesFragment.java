@@ -1,6 +1,7 @@
 package com.betterclever.aparoksha.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.betterclever.aparoksha.R;
+import com.betterclever.aparoksha.activities.EventDetailActivity;
 import com.betterclever.aparoksha.model.Event;
 import com.betterclever.aparoksha.viewholder.EventItemViewHolder;
 import com.bumptech.glide.Glide;
@@ -25,21 +27,22 @@ import com.google.firebase.storage.StorageReference;
 /**
  * Created by betterclever on 15/02/2016
  */
-public class Categories extends Fragment {
+public class CategoriesFragment extends Fragment {
     
-    private static final String TAG = Categories.class.getSimpleName();
+    private static final String TAG = CategoriesFragment.class.getSimpleName();
     String category;
     RecyclerView recyclerView;
+    FirebaseIndexRecyclerAdapter firebaseRecyclerAdapter;
     
-    public Categories() {
+    public CategoriesFragment() {
     }
     
-    public static Categories newInstance(String category) {
+    public static CategoriesFragment newInstance(String category) {
         
         Bundle args = new Bundle();
         args.putString("CATEGORY", category);
         
-        Categories fragment = new Categories();
+        CategoriesFragment fragment = new CategoriesFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -63,7 +66,7 @@ public class Categories extends Fragment {
         Log.d(TAG, "setupRecycleView() called");
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         
-        final FirebaseIndexRecyclerAdapter firebaseRecyclerAdapter =
+        firebaseRecyclerAdapter =
             new FirebaseIndexRecyclerAdapter<Event, EventItemViewHolder>(
                 Event.class,
                 R.layout.item_days_view,
@@ -72,7 +75,7 @@ public class Categories extends Fragment {
                 eventsRef) {
                 @Override
                 protected void populateViewHolder(EventItemViewHolder viewHolder,
-                                                  Event model, int position) {
+                                                  Event model, final int position) {
                     viewHolder.getDateTextView().setText(model.getTime());
                     viewHolder.getEventNameTextView().setText(model.getName());
     
@@ -84,6 +87,17 @@ public class Categories extends Fragment {
                         .using(new FirebaseImageLoader())
                         .load(ref)
                         .into(viewHolder.getEventImageView());
+    
+                    viewHolder.getEventImageView().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getActivity(), EventDetailActivity.class);
+                            String id = firebaseRecyclerAdapter.getRef(position).getKey();
+                            intent.putExtra("eventID",id);
+                            getContext().startActivity(intent);
+                        }
+                    });
+                    
                 }
             };
         

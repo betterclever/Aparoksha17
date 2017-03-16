@@ -22,10 +22,10 @@ public class HighlightsViewPagerAdapter extends FragmentStatePagerAdapter {
     public HighlightsViewPagerAdapter(FragmentManager fm) {
         super(fm);
         fragments = new ArrayList<>();
-        fragments.add(HighlightsFragment.newInstance(R.drawable.humble_fool_cup));
         fragments.add(HighlightsFragment.newInstance(R.drawable.hint));
+        fragments.add(HighlightsFragment.newInstance(R.drawable.alkhwar));
         fragments.add(HighlightsFragment.newInstance(R.drawable.humble_fool_cup));
-        fragments.add(HighlightsFragment.newInstance(R.drawable.hint));
+        fragments.add(HighlightsFragment.newInstance(R.drawable.tritech));
     }
 
     @Override

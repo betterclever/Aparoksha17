@@ -16,12 +16,7 @@ public class SwishyTransformer implements ViewPager.PageTransformer {
 
     public static final float MIN_SCALE = 0.2f;
 
-    private ImageView imageView;
-    private RelativeLayout.LayoutParams params;
-
-    public SwishyTransformer(Context context){
-        imageView = (ImageView) LayoutInflater.from(context).inflate(R.layout.aparoksha_logo,null);
-        params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+    public SwishyTransformer(){
     }
 
     @Override

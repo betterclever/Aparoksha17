@@ -54,7 +54,7 @@ public class HomeFragment extends Fragment {
     
     private void init() {
         
-        transformer = new SwishyTransformer(getContext());
+        transformer = new SwishyTransformer();
         adapter = new HighlightsViewPagerAdapter(getActivity().getSupportFragmentManager());
         
         viewPager.setAdapter(adapter);

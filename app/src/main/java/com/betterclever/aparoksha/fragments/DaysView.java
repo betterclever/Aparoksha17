@@ -1,6 +1,6 @@
 package com.betterclever.aparoksha.fragments;
 
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GestureDetectorCompat;
@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.betterclever.aparoksha.R;
+import com.betterclever.aparoksha.activities.EventDetailActivity;
 import com.betterclever.aparoksha.model.Event;
 import com.betterclever.aparoksha.viewholder.EventItemViewHolder;
 import com.bumptech.glide.Glide;
@@ -31,6 +32,7 @@ import com.google.firebase.storage.StorageReference;
 public class DaysView extends Fragment {
 
     public static final String TAG = DaysView.class.getSimpleName();
+    FirebaseRecyclerAdapter firebaseRecyclerAdapter;
 
     String date = "24-03-2017";
 
@@ -56,27 +58,13 @@ public class DaysView extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_days_view, container, false);
 
-        RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
+        final RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("events");
-        Query query = databaseReference.orderByChild("date").equalTo(date);
-
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.i(TAG, "onDataChange: "+ dataSnapshot.toString());
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.i(TAG,databaseError.toString());
-            }
-        });
-
-        Log.i(TAG, "onCreateView: called");
-
-        final FirebaseRecyclerAdapter firebaseRecyclerAdapter =
+        final Query query = databaseReference.orderByChild("date").equalTo(date);
+        
+        firebaseRecyclerAdapter =
                 new FirebaseRecyclerAdapter<Event,EventItemViewHolder> (
                         Event.class,
                         R.layout.item_days_view,
@@ -84,11 +72,8 @@ public class DaysView extends Fragment {
                         query) {
             @Override
             protected void populateViewHolder(EventItemViewHolder viewHolder,
-                                              Event model, int position) {
-
-
-                Log.i("Hi","Yo");
-    
+                                              final Event model, final int position) {
+                
                 StorageReference ref = FirebaseStorage.getInstance().getReference().child(model.getImage());
                 
                 Log.d(TAG,ref.toString());
@@ -101,16 +86,23 @@ public class DaysView extends Fragment {
 
                 viewHolder.getDateTextView().setText(model.getTime());
                 viewHolder.getEventNameTextView().setText(model.getName());
+                viewHolder.getEventImageView().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(), EventDetailActivity.class);
+                        String id = firebaseRecyclerAdapter.getRef(position).getKey();
+                        intent.putExtra("eventID",id);
+                        getContext().startActivity(intent);
+                    }
+                });
 
             }
         };
 
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
-        //recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(firebaseRecyclerAdapter);
 
         return v;
-
     }
 
 }

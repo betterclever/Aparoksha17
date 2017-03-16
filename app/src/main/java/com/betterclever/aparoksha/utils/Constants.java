@@ -17,32 +17,32 @@ public class Constants {
         teamAprList.add(
             new TeamPerson(R.drawable.sahil,
                 "Sahil Hindwani","Overall Coordinator",
-                "7617027345","https://github.com/betterclever",true));
+                "7617027345","https://github.com/betterclever",false));
     
         teamAprList.add(
             new TeamPerson(R.drawable.deora2,
                 "Abhishek Deora","Tech Head",
-                "7617027345","https://github.com/betterclever",true));
+                "7617027345","https://github.com/betterclever",false));
     
         teamAprList.add(
             new TeamPerson(R.drawable.sample2,
                 "Pranjal Paliwal","App Developer",
-                "7617027345","https://github.com/betterclever",true));
+                "7617027345","https://github.com/betterclever",false));
     
         teamAprList.add(
             new TeamPerson(R.drawable.sample2,
                 "Pranjal Paliwal","App Developer",
-                "7617027345","https://github.com/betterclever",true));
+                "7617027345","https://github.com/betterclever",false));
     
         teamAprList.add(
             new TeamPerson(R.drawable.sample2,
                 "Pranjal Paliwal","App Developer",
-                "7617027345","https://github.com/betterclever",true));
+                "7617027345","https://github.com/betterclever",false));
     
         teamAprList.add(
             new TeamPerson(R.drawable.sample2,
                 "Pranjal Paliwal","App Developer",
-                "7617027345","https://github.com/betterclever",true));
+                "7617027345","https://github.com/betterclever",false));
     
         developersList.add(new TeamPerson(R.drawable.naveen,
             "Naveen Shukla","App Head",

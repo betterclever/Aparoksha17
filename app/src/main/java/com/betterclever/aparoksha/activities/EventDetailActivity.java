@@ -1,7 +1,6 @@
 package com.betterclever.aparoksha.activities;
 
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -18,11 +17,8 @@ import com.betterclever.aparoksha.fragments.UpdatesFragment;
 import com.betterclever.aparoksha.model.Event;
 import com.betterclever.aparoksha.widgets.CircleImageView;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.target.Target;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -48,14 +44,10 @@ public class EventDetailActivity extends AppCompatActivity implements ValueEvent
     SpaceTabLayout spaceTabLayout;
     @BindView(R.id.eventImageView)
     ImageView eventImageView;
-    @BindView(R.id.category_imageview)
-    ImageView categoryImageview;
-    @BindView(R.id.event_image_view_circle)
-    CircleImageView eventImageViewCircle;
+    @BindView(R.id.event_image_view_second)
+    ImageView eventImageViewSecond;
     @BindView(R.id.eventTitleTextView)
     TextView eventTitleTextView;
-    @BindView(R.id.team_imageview)
-    ImageView teamImageview;
     
     DatabaseReference eventDbRef;
     StorageReference imageStorageRef;
@@ -126,7 +118,7 @@ public class EventDetailActivity extends AppCompatActivity implements ValueEvent
                         .from(resource)
                         .into(eventImageView);
                     
-                    eventImageViewCircle.setImageBitmap(resource);
+                    eventImageViewSecond.setImageBitmap(resource);
                 }
             });
         

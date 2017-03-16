@@ -52,10 +52,23 @@ public class HighlightsFragment extends Fragment {
     
     public void reset() {
         if(highlightsView!=null) {
+            
             highlightsView.setVisibility(View.VISIBLE);
             placeholderView.setVisibility(View.INVISIBLE);
     
             Log.d(TAG, "reset() called");
+        }
+    }
+    
+    @Override
+    public void onResume() {
+        super.onResume();
+    
+        if(highlightsView!=null) {
+            highlightsView.setVisibility(View.VISIBLE);
+            placeholderView.setVisibility(View.INVISIBLE);
+    
+            Log.d(TAG, "onResume: called");
         }
     }
 }

@@ -55,8 +55,8 @@ public class TeamFragment extends Fragment {
 		teamAprRecyclerView.setLayoutManager(layoutManager1);
 		developersRecyclerView.setLayoutManager(layoutManager2);
 		
-		teamAdapter = new PersonAdapter(Constants.teamAprList);
-		developerAdapter = new PersonAdapter(Constants.developersList);
+		teamAdapter = new PersonAdapter(getContext(),Constants.teamAprList,false);
+		developerAdapter = new PersonAdapter(getContext(),Constants.developersList,true);
 		
 		teamAprRecyclerView.setAdapter(teamAdapter);
 		developersRecyclerView.setAdapter(developerAdapter);

@@ -27,16 +27,11 @@ public class MainActivity extends AppCompatActivity {
 		fab.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-
 				
 				Intent intent = new Intent(MainActivity.this,EventDetailActivity.class);
 				intent.putExtra("eventID","104");
 				startActivity(intent);
 
-				/*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-					.setAction("Action", null).show();*/
-
-                //startScan();
 			}
 		});
 	}
