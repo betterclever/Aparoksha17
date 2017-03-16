@@ -13,55 +13,70 @@ import com.betterclever.aparoksha.R;
 import com.betterclever.aparoksha.adapters.PersonAdapter;
 import com.betterclever.aparoksha.utils.Constants;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by betterclever on 12/21/2016.
  */
 
 public class TeamFragment extends Fragment {
-
-	RecyclerView teamAprRecyclerView;
-	RecyclerView developersRecyclerView;
-	
-	PersonAdapter teamAdapter;
-	PersonAdapter developerAdapter;
-	
-	
-	public TeamFragment() {}
-
-	public static TeamFragment newInstance() {
-
-		Bundle args = new Bundle();
-
-		TeamFragment fragment = new TeamFragment();
-		fragment.setArguments(args);
-
-		return fragment;
-	}
-
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState) {
-
-		View v= inflater.inflate(R.layout.fragment_team, container, false);
-		teamAprRecyclerView = (RecyclerView) v.findViewById(R.id.team_recyclerview);
-		developersRecyclerView = (RecyclerView) v.findViewById(R.id.developers_recyclerview);
-		
-		LinearLayoutManager layoutManager1
-			= new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-		
-		LinearLayoutManager layoutManager2
-			= new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-		
-		teamAprRecyclerView.setLayoutManager(layoutManager1);
-		developersRecyclerView.setLayoutManager(layoutManager2);
-		
-		teamAdapter = new PersonAdapter(getContext(),Constants.teamAprList,false);
-		developerAdapter = new PersonAdapter(getContext(),Constants.developersList,true);
-		
-		teamAprRecyclerView.setAdapter(teamAdapter);
-		developersRecyclerView.setAdapter(developerAdapter);
-		
-		return v;
-	}
-
+    
+    PersonAdapter teamAdapter;
+    PersonAdapter developerAdapter;
+    PersonAdapter membersAdapter;
+    
+    @BindView(R.id.team_recyclerview)
+    RecyclerView teamRecyclerView;
+    @BindView(R.id.developers_recyclerview)
+    RecyclerView developersRecyclerView;
+    @BindView(R.id.memebers_recyclerview)
+    RecyclerView memebersRecyclerView;
+    
+    public TeamFragment() {
+    }
+    
+    public static TeamFragment newInstance() {
+        
+        Bundle args = new Bundle();
+        
+        TeamFragment fragment = new TeamFragment();
+        fragment.setArguments(args);
+        
+        return fragment;
+    }
+    
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        
+        View v = inflater.inflate(R.layout.fragment_team, container, false);
+        ButterKnife.bind(this, v);
+        
+        LinearLayoutManager layoutManager1
+            = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        
+        LinearLayoutManager layoutManager2
+            = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+    
+    
+        LinearLayoutManager layoutManager3
+            = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+    
+    
+        teamRecyclerView.setLayoutManager(layoutManager1);
+        developersRecyclerView.setLayoutManager(layoutManager2);
+        memebersRecyclerView.setLayoutManager(layoutManager3);
+        
+        teamAdapter = new PersonAdapter(getContext(), Constants.teamAprList, false);
+        developerAdapter = new PersonAdapter(getContext(), Constants.developersList, true);
+        membersAdapter = new PersonAdapter(getContext(),Constants.memberList,false);
+        
+        teamRecyclerView.setAdapter(teamAdapter);
+        developersRecyclerView.setAdapter(developerAdapter);
+        memebersRecyclerView.setAdapter(membersAdapter);
+        
+        return v;
+    }
+    
 }

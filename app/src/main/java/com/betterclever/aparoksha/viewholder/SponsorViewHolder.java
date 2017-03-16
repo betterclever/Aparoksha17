@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
  * Created by betterclever on 3/16/2017.
  */
 
-public class SponserViewHolder extends RecyclerView.ViewHolder {
+public class SponsorViewHolder extends RecyclerView.ViewHolder {
     
     @BindView(R.id.sponsor_imageview)
     public ImageView imageView;
@@ -22,7 +22,7 @@ public class SponserViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.sponsor_textview)
     public TextView textView;
     
-    public SponserViewHolder(View itemView) {
+    public SponsorViewHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this,itemView);
     }

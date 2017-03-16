@@ -16,7 +16,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Team Aparoksha"
+            android:text="Head Members"
             android:textSize="24sp"
             android:textStyle="bold"/>
 
@@ -24,14 +24,12 @@
             android:id="@+id/team_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="240dp"
-            android:layout_below="@id/team_title"
             android:paddingLeft="15dp"/>
 
         <TextView
             android:id="@+id/developers_title"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@id/team_recyclerview"
             android:gravity="center"
             android:padding="5dp"
             android:text="Developed by"
@@ -42,8 +40,24 @@
             android:id="@+id/developers_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="280dp"
-            android:layout_below="@id/developers_title"
             android:paddingLeft="15dp"/>
+
+        <TextView
+            android:id="@+id/memebers_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Team Memebers"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/memebers_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:paddingLeft="15dp"/>
+
 
     </LinearLayout>
 

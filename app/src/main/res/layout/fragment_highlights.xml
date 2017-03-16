@@ -11,14 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/sample"
         />
 
     <ImageView
         android:id="@+id/placeholder_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@mipmap/ic_launcher"
         android:visibility="invisible"/>
 
 </RelativeLayout>

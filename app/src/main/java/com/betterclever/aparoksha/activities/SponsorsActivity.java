@@ -6,10 +6,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.betterclever.aparoksha.R;
 import com.betterclever.aparoksha.model.Sponsor;
-import com.betterclever.aparoksha.viewholder.SponserViewHolder;
+import com.betterclever.aparoksha.viewholder.SponsorViewHolder;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
@@ -34,14 +35,16 @@ public class SponsorsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sponsors);
         ButterKnife.bind(this);
         
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("sponsers");
+        getSupportActionBar().setTitle("Sponsors");
+        
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("sponsors");
         sponsorRecyclerview.setLayoutManager(new LinearLayoutManager(this));
         
-        sponsorRecyclerview.setAdapter(new FirebaseRecyclerAdapter<Sponsor,SponserViewHolder>
-            (Sponsor.class,R.layout.item_sponsor, SponserViewHolder.class,databaseReference) {
+        sponsorRecyclerview.setAdapter(new FirebaseRecyclerAdapter<Sponsor,SponsorViewHolder>
+            (Sponsor.class,R.layout.item_sponsor, SponsorViewHolder.class,databaseReference) {
             
             @Override
-            protected void populateViewHolder(SponserViewHolder viewHolder, Sponsor model, int position) {
+            protected void populateViewHolder(SponsorViewHolder viewHolder, final Sponsor model, int position) {
                 
                 StorageReference ref = FirebaseStorage.getInstance().getReference().child(model.getImage());
     
@@ -50,10 +53,17 @@ public class SponsorsActivity extends AppCompatActivity {
                     .load(ref)
                     .into(viewHolder.imageView);
     
-                String url = model.getWebsite();
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                SponsorsActivity.this.startActivity(i);
+                viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        
+                        String url = model.getWebsite();
+                        Intent i = new Intent(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse(url));
+                        SponsorsActivity.this.startActivity(i);
+    
+                    }
+                });
                 
                 viewHolder.textView.setText(model.getName());
             }

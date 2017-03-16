@@ -22,8 +22,7 @@
             <ImageView
                 android:id="@+id/profile_image"
                 android:layout_width="match_parent"
-                app:layout_heightPercent="60%"
-                app:srcCompat="@drawable/pran"/>
+                app:layout_heightPercent="60%"/>
 
             <TextView
                 android:id="@+id/person_name_textview"

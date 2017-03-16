@@ -84,103 +84,102 @@ public class Constants {
         
         
         memberList.add(new TeamPerson(R.drawable.memeber_atul,
-            "","",
+            "Atul Sinha","Creatives",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_rohan,
-            "","",
+            "Rohan Choudhary","Creatives",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_rajat,
-            "","",
+            "Rajat Mishra","Creatives",
             "","",false));
         
         memberList.add(new TeamPerson(R.drawable.memeber_khare,
-            "","",
+            "Abhinav Khare","Website",
             "","",false));
         
         memberList.add(new TeamPerson(R.drawable.memeber_padia,
-            "","",
+            "Shubham Padia","Website",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_dewan,
-            "","",
+            "Aditya Dewan","Website",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_lovish,
-            "","",
+            "Lovish Kumar Vatwani","Sponsorship",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_attri,
-            "","",
+            "Indresh Attri","Sponsorship",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_navneet,
-            "","",
+            "Navneet Kumar Patel","Public Relations",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_shyamsundar,
-            "","",
+            "Shyam Sundar","Public Relations",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_hariom,
-            "","",
+            "Hariom Niranjan","Finance",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_shyamkotecha,
-            "","",
+            "Shyam Kotecha","Finance",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_ram,
-            "","",
+            "Ram Kishor","Logistics and Branding",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_bhandari,
-            "","",
+            "Shubham Bhandari","Logistics and Branding",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_tarun,
-            "","",
+            "Tarun Jain","Logistics and Branding",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_avinash,
-            "","",
+            "Avinash Yadav","Logistics and Branding",
             "","",false));
         
         memberList.add(new TeamPerson(R.drawable.memeber_chaitanya,
-            "","",
+            "Chaitanya Yadav","Events and Management",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_somendra,
-            "","",
+            "Somendra Agrawal","Events and Management",
             "","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_rajeev,
-            "","",
+            "Rajeev Dixit","Events and Management",
             "","",false));
         
         memberList.add(new TeamPerson(R.drawable.memeber_ashutosh,
-            "","",
-            "","",false));
-    
-    
-        memberList.add(new TeamPerson(R.drawable.memeber_diwakar,
-            "","",
-            "","",false));
-    
-    
-        memberList.add(new TeamPerson(R.drawable.memeber_rachit,
-            "","",
+            "Ashutosh Chandra","Events and Management",
             "","",false));
     
     
         memberList.add(new TeamPerson(R.drawable.memeber_goyal,
-            "","",
+            "Aayush Goyal","Events and Management",
+            "","",false));
+    
+        memberList.add(new TeamPerson(R.drawable.memeber_diwakar,
+            "Diwakar Vinay","Workshop/Talks",
             "","",false));
     
     
+        memberList.add(new TeamPerson(R.drawable.memeber_rachit,
+            "Rachit Parashar","Workshop/Talks",
+            "","",false));
+        
+    
         memberList.add(new TeamPerson(R.drawable.memeber_mubaris,
-            "","",
+            "Mubaris Hassan","Workshop/Talks",
             "","",false));
         
     }
