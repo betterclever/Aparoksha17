@@ -100,6 +100,7 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_LONG).show();
             } else {
                 String scannedString = result.getContents();
+                Log.d(TAG, "onActivityResult: "+scannedString);
                 if(scannedString.endsWith("aparoksha17-made-by-betterclever")){
                     try {
                         int code = Integer.parseInt(scannedString.substring(0, 3));
@@ -115,6 +116,9 @@ public class HomeFragment extends Fragment {
                     catch (NumberFormatException e){
                         Toast.makeText(getContext(), "Invalid QR Code", Toast.LENGTH_LONG).show();
                     }
+                }
+                else {
+                    Toast.makeText(getContext(), "Invalid QR Code", Toast.LENGTH_LONG).show();
                 }
             }
         } else {

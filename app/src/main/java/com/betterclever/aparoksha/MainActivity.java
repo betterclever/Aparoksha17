@@ -48,17 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
 		int id = item.getItemId();
 
-		if (id == R.id.action_settings) {
-			return true;
-		}
-
 		return super.onOptionsItemSelected(item);
-	}
-
-	private void startScan(){
-
-		new IntentIntegrator(this).initiateScan();
-
 	}
 
 	@Override

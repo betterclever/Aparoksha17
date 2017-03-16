@@ -62,6 +62,10 @@ public class TimeDateFragment extends Fragment {
         time = event.getTime();
         location = event.getLocation();
         
+        if(timeTextview == null){
+            return;
+        }
+        
         timeTextview.setText(time);
         dateTextview.setText(date);
         locationTextview.setText(location);

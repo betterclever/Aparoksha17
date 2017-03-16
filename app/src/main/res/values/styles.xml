@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/md_cyan_700</item>
-        <item name="colorPrimaryDark">@color/md_cyan_900</item>
-        <item name="colorAccent">@color/md_pink_400</item>
+        <item name="colorPrimary">#ff0045</item>
+        <item name="colorPrimaryDark">#d50039</item>
+        <item name="colorAccent">#42A5F5</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

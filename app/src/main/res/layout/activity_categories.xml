@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bk22"
     tools:context="com.betterclever.aparoksha.activities.CategoriesViewActivity">
 
     <com.lukedeighton.wheelview.WheelView
@@ -12,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:selectionColor="@color/colorAccent"
-        app:wheelColor="#66919191"
+        app:wheelColor="#9d464646"
         app:rotatableWheelDrawable="true"
         app:selectionAngle="0.0"
         app:wheelPosition="left"
@@ -28,7 +29,7 @@
         android:layout_height="60dp"
         android:layout_margin="20dp"
         android:textSize="25sp"
-        android:background="#4a4a4a"
+        android:background="#be4a4a4a"
         android:gravity="center"
         android:textColor="#FFFFFF"
         app:layout_widthPercent="35%"

@@ -42,6 +42,7 @@ public class CategoriesViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_categories);
         ButterKnife.bind(this);
         init();
+        getSupportActionBar().setTitle("Categories");
     }
     
     private void init() {

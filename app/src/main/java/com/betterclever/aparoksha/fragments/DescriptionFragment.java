@@ -48,6 +48,8 @@ public class DescriptionFragment extends Fragment {
     
     public void setDescription(String description) {
         this.description = description;
-        descriptionTextView.setText(description);
+        if(descriptionTextView!=null) {
+            descriptionTextView.setText(description);
+        }
     }
 }
