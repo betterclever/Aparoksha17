@@ -589,8 +589,11 @@
     "extrainfo" : {
       "one" : {
         "infoDetail" : "https://www.facebook.com/events/228344527634869/",
-        "infoTitle" : "Event Page on Facebook",
-        "prizeMoney" : "3000"
+        "infoTitle" : "Event Page on Facebook"
+      },
+      "two" : {
+        "infoDetail" : "Rs 3000",
+        "infoTitle" : "Prize Money"
       }
     },
     "image" : "sample.png",
