@@ -617,6 +617,7 @@
         "infoDetail" : "To be updated",
         "infoTitle" : "Event Prizes"
       }
+      
     },
     "image" : "129.png",
     "location" : "To be updated",
@@ -649,28 +650,33 @@
   },
   "131" : {
     "date" : "25-03-2017",
-    "description" : "",
+    "description" : "TOPBOT is the Flagship Robotics event of ECE in Aparoksha'17.This consist of two themes first one Jarvis and otherone BOLT. Bolt is obstacle avoider problem and Jarvis is line follower problem",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
-        "infoTitle" : "Event Prizes"
+        "infoDetail" : "https://topbot2017.github.io/",
+        "infoTitle" : "Event Website"
+      },
+       "two" : {
+        "infoDetail" : "Rs 45000",
+        "infoTitle" : "Prize Worth"
       }
+    
     },
     "image" : "131.png",
-    "location" : "Computer Centre 3",
+    "location" : "TENNIS-COURT",
     "name" : "Topbot",
     "organizers" : [ {
-      "contact" : "",
+      "contact" : "9918465331",
       "name" : "Rajeev Dixit"
     }, {
       "contact" : "",
-      "name" : "Deepak Singh"
+      "name" : "Saurabh Jauhari"
     }, {
-      "contact" : "",
-      "name" : "Somendra Agarwal"
+      "contact" : "7233020977",
+      "name" : "Somendra Agrawal"
     } ],
-    "time" : "8:00 PM - 10:00 PM",
-    "type" : ""
+    "time" : "2:00 PM-7:00 PM",
+    "type" : "Team Event"
   },
   "132" : {
     "date" : "26-03-2017",
