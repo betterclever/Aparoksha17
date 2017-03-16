@@ -650,8 +650,7 @@
   },
   "131" : {
     "date" : "25-03-2017",
-    "description" : "TOPBOT is the Flagship Robotics event of ECE in Aparoksha'17.This consist of two themes first one Jarvis and otherone BOLT
-    Bolt is obstacle avoider problem and Jarvis is line follower problem",
+    "description" : "TOPBOT is the Flagship Robotics event of ECE in Aparoksha'17.This consist of two themes first one Jarvis and otherone BOLT. Bolt is obstacle avoider problem and Jarvis is line follower problem",
     "extrainfo" : {
       "one" : {
         "infoDetail" : "https://topbot2017.github.io/",
@@ -659,7 +658,7 @@
       },
        "two" : {
         "infoDetail" : "Rs 45000",
-        "infoTitle" : "Prize WORTH"
+        "infoTitle" : "Prize Worth"
       }
     
     },
@@ -671,7 +670,7 @@
       "name" : "Rajeev Dixit"
     }, {
       "contact" : "",
-      "name" : "saurabh jauhari"
+      "name" : "Saurabh Jauhari"
     }, {
       "contact" : "7233020977",
       "name" : "Somendra Agrawal"
