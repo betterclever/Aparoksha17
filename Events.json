@@ -584,16 +584,17 @@
     "type" : ""
   },
   "128" : {
-    "date" : "24-03-2017",
-    "description" : "The participants will design a poster on a given theme within a time frame.",
+    "date" : "25-03-2017",
+    "description" : " “All the problems of the world could be settled easily if men were only willing to think.” But, thinking is often the hardest work of all. As Aparoksha’17 revives the design culture, it is important that we embrace thinking as well as making. So put on your creative hats for the biggest design competition of Aparoksha. 90 minutes is all you have, and sky is the limit. Create something magical!",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
-        "infoTitle" : "Event Prizes"
+        "infoDetail" : "https://www.facebook.com/events/228344527634869/",
+        "infoTitle" : "Event Page on Facebook",
+        "prizeMoney" : "3000"
       }
     },
     "image" : "sample.png",
-    "location" : "Computer Centre 3",
+    "location" : "Computer Centre 3 Lab",
     "name" : "Poster Mania",
     "organizers" : [ {
       "contact" : "9918992179",
@@ -603,7 +604,7 @@
       "name" : "Aditya Powale"
     } ],
     "time" : "8:00 PM - 9:30 PM",
-    "type" : ""
+    "type" : "Individual"
   },
   "129" : {
     "date" : "26-03-2017",
