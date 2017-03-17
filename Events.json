@@ -262,12 +262,20 @@
     "description" : "Challenge others and prove your mettle in this typing speed war",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
+        "infoDetail" : "Total cash prize of ₹2200",
         "infoTitle" : "Event Prizes"
+      },
+      "two" : {
+        "infoDetail" : "https://www.facebook.com/events/1898796100349103/",
+        "infoTitle" : "Event Link on Facebook"
+      },
+      "three" : {
+        "infoDetail" : "https://docs.google.com/forms/d/1cUX0P_ZfEj8guMZNESmwJWaEbgqGTY_NtR_HkFWYL6A/formrestricted?edit_requested=true",
+        "infoTitle" : "Event Registration Link"
       }
     },
     "image" : "112.jpg",
-    "location" : "Computer Centre 3",
+    "location" : "Pavilion",
     "name" : "QWERTY Wars",
     "organizers" : [ {
       "contact" : "9559156837",
@@ -276,8 +284,8 @@
       "contact" : "7860393856",
       "name" : "Swapnil"
     } ],
-    "time" : "5:00 PM - 7:00 PM",
-    "type" : ""
+    "time" : "2:00 PM - 5:00 PM",
+    "type" : "Individual"
   },
   "113" : {
     "date" : "26-03-2017",
