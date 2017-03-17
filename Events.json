@@ -182,26 +182,24 @@
     "type" : "Individual"
   },
   "109" : {
-    "date" : "23-03-2017",
-    "description" : "From rage-filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! ",
+    "date" : "24-03-2017",
+    "description" : "Participate in thr battle of the most thrilling Android Games like Mini Militia,Clash of Clans and Clash Royale.Win exciting prizes by just doing what you do the best :P",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
+        "infoDetail" : "Cash prizes worth 2k !!",
         "infoTitle" : "Event Prizes"
       }
     },
     "image" : "109.jpg",
-    "location" : "Computer Centre 3",
-    "name" : "Clash of Clans",
+    "location" : "Ground",
+    "name" : "Android Gamers' Asylum",
     "organizers" : [ {
-      "contact" : "",
+      "contact" : "7784918908",
       "name" : "Nimish"
-    }, {
-      "contact" : "7408228819",
-      "name" : "Subham Choudhury"
-    } ],
+    }
+   ],
     "time" : "10:00 PM onwards",
-    "type" : ""
+    "type" : "Individual and Team"
   },
   "110" : {
     "date" : "23-03-2017",
