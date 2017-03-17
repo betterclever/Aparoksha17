@@ -164,12 +164,20 @@
     "type" : ""
   },
   "108" : {
-    "date" : "25-03-2017",
+    "date" : "26-03-2017",
     "description" : "It tests the learning skills of the participants. A random language is provided along with tutorials needed to learn the same and the participants are required to solve a set of problems in the time provided. ",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
+        "infoDetail" : "Total prize pool of ₹4500",
         "infoTitle" : "Event Prizes"
+      }
+      "two" : {
+        "infoDetail" : "https://www.facebook.com/events/1758412691139668/",
+        "infoTitle" : "Event Link on Facebook"
+      }
+      "three" : {
+        "infoDetail" : "https://goo.gl/9oVN8O",
+        "infoTitle" : "Event Registration Link"
       }
     },
     "image" : "108.jpg",
@@ -177,7 +185,7 @@
     "name" : "Lang Challenge",
     "organizers" : [ {
       "contact" : "8604616966",
-      "name" : "Ashwin A. Wardhan"
+      "name" : "Ashwin A. Vardhan"
     }, {
       "contact" : "9895503662",
       "name" : "Mubaris Hassan"
