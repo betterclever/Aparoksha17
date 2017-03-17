@@ -72,16 +72,20 @@
     "type" : "team of three"
   },
   "104" : {
-    "date" : "23-03-2017",
-    "description" : "Capture the flag(CTF) is a special type of information security competetion.There are three types:Jeopardy,Attack-Defense and Mixed",
+    "date" : "24-03-2017",
+    "description" : "Capture the flag(CTF) is a special type of information security competetion.There are three types:Jeopardy,Attack-Defense and Mixed. This one is Jeopardy",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
+        "infoDetail" : "₹ 4500",
         "infoTitle" : "Event Prizes"
+      },
+      "two" : {
+        "infoDetail" : "Event Link will be posted here as well as on the app \n https://www.facebook.com/events/1025877937511666/",
+        "infoTitle" : "Event Facebook Page"
       }
     },
     "image" : "104.jpg",
-    "location" : "Computer Centre 3",
+    "location" : "Online",
     "name" : "Capture the flag",
     "organizers" : [ {
       "contact" : "8004118981",
@@ -90,7 +94,7 @@
       "contact" : "9793212667",
       "name" : "Anshul Anand"
     } ],
-    "time" : "9:00 PM - 2:00 AM",
+    "time" : "9:00 PM - 9:00 AM",
     "type" : "team"
   },
   "105" : {
@@ -538,16 +542,12 @@
     "type" : ""
   },
   "126" : {
-    "date" : "26-03-2017",
+    "date" : "23-03-2017",
     "description" : "Blend the given creative elements to create a masterpiece of digital art. The participant will be given a set of photos (totally unrelated to each other), and is required to create an image with the use of maximum elements. Judging will be based on the poster quality and number of images used. ",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "Cash Prizes Worth Rs 2200",
+        "infoDetail" : "To be updated",
         "infoTitle" : "Event Prizes"
-      },
-      "two" : {
-        "infoDetail" : "https://www.facebook.com/events/101062127098000/"
-        "infoTitle" : "Facebook Event Link"
       }
     },
     "image" : "126.jpg",
@@ -561,7 +561,7 @@
       "name" : "Atul Sinha"
     } ],
     "time" : "10:00 AM - 12:00 AM",
-    "type" : "Individual"
+    "type" : ""
   },
   "127" : {
     "date" : "25-03-2017",
