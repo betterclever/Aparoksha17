@@ -391,8 +391,16 @@
     "description" : "Test your skills at googling",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
+        "infoDetail" : "Total prize pool of ₹1500",
         "infoTitle" : "Event Prizes"
+      },
+      "two" : {
+        "infoDetail" : "https://goo.gl/MMrTlF",
+        "infoTitle" : "Event Link on Facebook"
+      },
+      "three" : {
+        "infoDetail" : "https://goo.gl/Yx0e4z",
+        "infoTitle" : "Event Registration Link"
       }
     },
     "image" : "119.jpg",
