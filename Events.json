@@ -218,22 +218,29 @@
     "description" : "The famous treasure hunt is back!",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
+        "infoDetail" : "Cash Prizes worth 3k !!",
         "infoTitle" : "Event Prizes"
-      }
+      },
+     "two" : {
++        "infoDetail" : "https://www.facebook.com/events/241946786213536/",
++        "infoTitle" : "Event Page on Facebook"
++      }
     },
     "image" : "110.jpg",
-    "location" : "Computer Centre 3",
+    "location" : "Campus",
     "name" : "Treasure Hunt",
     "organizers" : [ {
-      "contact" : "",
+      "contact" : "8603111470",
       "name" : "Abhishek Nandan"
     }, {
-      "contact" : "",
+      "contact" : "9956044639",
       "name" : "Prabhat Singh"
+    }, {
+      "contact" : "9044739091",
+      "name" : "Akash Kumar"
     } ],
     "time" : "10:00 PM - 3:00 AM",
-    "type" : ""
+    "type" : "Team"
   },
   "111" : {
     "date" : "23-03-2017",
