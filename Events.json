@@ -72,16 +72,20 @@
     "type" : "team of three"
   },
   "104" : {
-    "date" : "23-03-2017",
-    "description" : "Capture the flag(CTF) is a special type of information security competetion.There are three types:Jeopardy,Attack-Defense and Mixed",
+    "date" : "24-03-2017",
+    "description" : "Capture the flag(CTF) is a special type of information security competetion.There are three types:Jeopardy,Attack-Defense and Mixed. This one is Jeopardy",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
+        "infoDetail" : "₹ 4500",
         "infoTitle" : "Event Prizes"
-      }
+      },
++      "two" : {
++        "infoDetail" : "Event Link will be posted here as well as on the app \n https://www.facebook.com/events/1025877937511666/",
++        "infoTitle" : "Event Facebook Page"
+       }
     },
     "image" : "104.jpg",
-    "location" : "Computer Centre 3",
+    "location" : "Online",
     "name" : "Capture the flag",
     "organizers" : [ {
       "contact" : "8004118981",
@@ -90,7 +94,7 @@
       "contact" : "9793212667",
       "name" : "Anshul Anand"
     } ],
-    "time" : "9:00 PM - 2:00 AM",
+    "time" : "9:00 PM - 9:00 AM",
     "type" : "team"
   },
   "105" : {
