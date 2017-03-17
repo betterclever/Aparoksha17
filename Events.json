@@ -170,6 +170,14 @@
       "one" : {
         "infoDetail" : "To be updated",
         "infoTitle" : "Event Prizes"
+      },
+      "two" : {
+        "infoDetail" : "https://www.facebook.com/events/1758412691139668",
+        "infoTitle" : "Event Link on Facebook"
+      },
+      "three" : {
+        "infoDetail" : "https://goo.gl/9oVN8O",
+        "infoTitle" : "Event Registration Link"
       }
     },
     "image" : "108.jpg",
@@ -554,7 +562,7 @@
         "infoTitle" : "Event Prizes"
       },
       "two" : {
-        "infoDetail" : "https://www.facebook.com/events/101062127098000/"
+        "infoDetail" : "https://www.facebook.com/events/101062127098000/",
         "infoTitle" : "Facebook Event Link"
       }
     },
