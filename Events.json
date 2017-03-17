@@ -164,11 +164,11 @@
     "type" : ""
   },
   "108" : {
-    "date" : "26-03-2017",
+    "date" : "25-03-2017",
     "description" : "It tests the learning skills of the participants. A random language is provided along with tutorials needed to learn the same and the participants are required to solve a set of problems in the time provided. ",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "Total prize pool of ₹4500",
+        "infoDetail" : "To be updated",
         "infoTitle" : "Event Prizes"
       },
       "two" : {
@@ -185,7 +185,7 @@
     "name" : "Lang Challenge",
     "organizers" : [ {
       "contact" : "8604616966",
-      "name" : "Ashwin A. Vardhan"
+      "name" : "Ashwin A. Wardhan"
     }, {
       "contact" : "9895503662",
       "name" : "Mubaris Hassan"
@@ -258,16 +258,20 @@
     "type" : ""
   },
   "112" : {
-    "date" : "24-03-2017",
+    "date" : "25-03-2017",
     "description" : "Challenge others and prove your mettle in this typing speed war",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
+        "infoDetail" : "Cash Prize Worth ₹2200",
         "infoTitle" : "Event Prizes"
-      }
+      },
+      "two" : {
+        "infoDetail" : "For prelims rounds details refer to out Facebook event page  \n https://www.facebook.com/events/1898796100349103/",
+        "infoTitle" : "Event Facebook Page"
+       }
     },
     "image" : "112.jpg",
-    "location" : "Computer Centre 3",
+    "location" : "Pavilion",
     "name" : "QWERTY Wars",
     "organizers" : [ {
       "contact" : "9559156837",
@@ -277,7 +281,7 @@
       "name" : "Swapnil"
     } ],
     "time" : "5:00 PM - 7:00 PM",
-    "type" : ""
+    "type" : "Individual"
   },
   "113" : {
     "date" : "26-03-2017",
@@ -387,7 +391,7 @@
     "type" : ""
   },
   "119" : {
-    "date" : "25-03-2017",
+    "date" : "24-03-2017",
     "description" : "Test your skills at googling",
     "extrainfo" : {
       "one" : {
@@ -407,7 +411,7 @@
     "location" : "Computer Centre 3",
     "name" : "Mr. Googler",
     "organizers" : [ {
-      "contact" : "8542078059",
+      "contact" : "",
       "name" : "Garima Gupta"
     }, {
       "contact" : "8896733935",
@@ -417,7 +421,7 @@
       "name" : "Upasana Singh"
     } ],
     "time" : "7:00 PM - 9:00 PM",
-    "type" : "Team of two"
+    "type" : ""
   },
   "120" : {
     "date" : "23-03-2017",
@@ -445,7 +449,7 @@
     "type" : ""
   },
   "121" : {
-    "date" : "24-03-2017",
+    "date" : "23-03-2017",
     "description" : "This event contain different type of question oriented to bioengineering (biomedical , biotechnology engineering or any applied science courses related to biology) .this event consist of two rounds. ",
     "extrainfo" : {
       "one" : {
@@ -464,7 +468,7 @@
       "name" : "Deepak Sonker"
     } ],
     "time" : "11:00 AM - 2:00 PM",
-    "type" : "Individual"
+    "type" : ""
   },
   "122" : {
     "date" : "24-03-2017",
