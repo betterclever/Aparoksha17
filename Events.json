@@ -94,28 +94,28 @@
     "type" : "team"
   },
   "105" : {
-    "date" : "24-03-2017",
+    "date" : "25-03-2017",
     "description" : "Wolf 2311 is a team event of electronics hardware design.Test your technical knowledge with a slight blend of entrepreneur skill in 2311,the quintessential electronics lab of IIITA ",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
+        "infoDetail" : "Worth ₹4000",
         "infoTitle" : "Event Prizes"
       }
     },
     "image" : "105.jpg",
     "location" : "Computer Centre 3",
-    "name" : "Wolf 2311",
+    "name" : "Wolf of 2311",
     "organizers" : [ {
       "contact" : "9005285986",
       "name" : "Ankit Arora"
     }, {
-      "contact" : "",
+      "contact" : "7054768223",
       "name" : "Aditya Maheshwari"
     }, {
-      "contact" : "",
+      "contact" : "9473726837",
       "name" : "Naveen Manikanta"
     } ],
-    "time" : "8:00 PM - 10:00 PM",
+    "time" : "7:00 PM - 9:00 PM",
     "type" : "team"
   },
   "106" : {
