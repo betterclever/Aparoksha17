@@ -178,8 +178,8 @@
       "contact" : "9895503662",
       "name" : "Mubaris Hassan"
     } ],
-    "time" : "12:0 PM - 2:00 PM",
-    "type" : ""
+    "time" : "12:00 PM - 2:00 PM",
+    "type" : "Individual"
   },
   "109" : {
     "date" : "23-03-2017",
@@ -617,7 +617,7 @@
         "infoDetail" : "To be updated",
         "infoTitle" : "Event Prizes"
       }
-      
+
     },
     "image" : "129.jpg",
     "location" : "To be updated",
@@ -631,22 +631,38 @@
   },
   "130" : {
     "date" : "23-03-2017",
-    "description" : "",
+    "description" : "The biggest student held Hackathon in India",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
-        "infoTitle" : "Event Prizes"
+        "infoDetail" : "hackinthenorth.com",
+        "infoTitle" : "Event Website"
+      },
+      "two" : {
+        "infoDetail" : "Rs 100000",
+        "infoTitle" : "Prize Worth"
       }
     },
     "image" : "130.jpg",
-    "location" : "To be updated",
+    "location" : "Computer Centre 3",
     "name" : "Hack In The North",
     "organizers" : [ {
-      "contact" : "",
-      "name" : "Team HackInTheNorth"
+      "contact" : "9559386146",
+      "name" : "Vishnu KS"
+    },
+    {
+      "contact" : "9748368303",
+      "name" : "Saptak Sengupta"
+    },
+    {
+      "contact" : "8756227275",
+      "name" : "Abhishek Deora"
+    },
+    {
+      "contact" : "8281896007",
+      "name" : "Gautham Santhosh"
     } ],
-    "time" : "",
-    "type" : ""
+    "time" : "23 - 25 March",
+    "type" : "Team"
   },
   "131" : {
     "date" : "25-03-2017",
@@ -660,7 +676,7 @@
         "infoDetail" : "Rs 45000",
         "infoTitle" : "Prize Worth"
       }
-    
+
     },
     "image" : "131.jpg",
     "location" : "TENNIS-COURT",
