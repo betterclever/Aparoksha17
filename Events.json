@@ -123,26 +123,30 @@
     "type" : "team"
   },
   "106" : {
-    "date" : "24-03-2017",
+    "date" : "25-03-2017",
     "description" : "It is an online mathematical event which gives you a great opportunity to try your hands on some exciting mathematical problems.",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
+        "infoDetail" : "Worth ₹4500",
         "infoTitle" : "Event Prizes"
+      },
+      "two" : {
+        "infoDetail" : "https://www.facebook.com/events/1287021474716417/",
+        "infoTitle" : "Event Link on Facebook"
       }
     },
     "image" : "106.jpg",
-    "location" : "Computer Centre 3",
+    "location" : "Online",
     "name" : "Infinitum",
     "organizers" : [ {
-      "contact" : "",
+      "contact" : "8127641941",
       "name" : "Teja Vojjala"
     }, {
       "contact" : "",
       "name" : "Amol"
     } ],
-    "time" : "12:00 AM - 10:00 AM",
-    "type" : ""
+    "time" : "12:00 AM - 12:00 PM",
+    "type" : "Individual"
   },
   "107" : {
     "date" : "25-03-2017",
