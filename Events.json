@@ -631,10 +631,10 @@
   },
   "130" : {
     "date" : "23-03-2017",
-    "description" : "The biggest student held Hackathon in India",
+    "description" : "Hack In The North is the biggest student held hackathon in India. 300 students from all across India will come together in IIIT Allahabad this March and spend 36 hours building projects they are passionate about. Hack In The North is open for university and high school students.",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "hackinthenorth.com",
+        "infoDetail" : "https://hackinthenorth.com",
         "infoTitle" : "Event Website"
       },
       "two" : {
