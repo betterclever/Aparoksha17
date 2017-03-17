@@ -538,12 +538,16 @@
     "type" : ""
   },
   "126" : {
-    "date" : "23-03-2017",
+    "date" : "26-03-2017",
     "description" : "Blend the given creative elements to create a masterpiece of digital art. The participant will be given a set of photos (totally unrelated to each other), and is required to create an image with the use of maximum elements. Judging will be based on the poster quality and number of images used. ",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "To be updated",
+        "infoDetail" : "Cash Prizes Worth Rs 2200",
         "infoTitle" : "Event Prizes"
+      },
+      "two" : {
+        "infoDetail" : "https://www.facebook.com/events/101062127098000/"
+        "infoTitle" : "Facebook Event Link"
       }
     },
     "image" : "126.jpg",
@@ -557,7 +561,7 @@
       "name" : "Atul Sinha"
     } ],
     "time" : "10:00 AM - 12:00 AM",
-    "type" : ""
+    "type" : "Individual"
   },
   "127" : {
     "date" : "25-03-2017",
