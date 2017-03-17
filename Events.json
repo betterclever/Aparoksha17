@@ -387,7 +387,7 @@
     "type" : ""
   },
   "119" : {
-    "date" : "24-03-2017",
+    "date" : "25-03-2017",
     "description" : "Test your skills at googling",
     "extrainfo" : {
       "one" : {
@@ -399,7 +399,7 @@
     "location" : "Computer Centre 3",
     "name" : "Mr. Googler",
     "organizers" : [ {
-      "contact" : "",
+      "contact" : "8542078059",
       "name" : "Garima Gupta"
     }, {
       "contact" : "8896733935",
@@ -409,7 +409,7 @@
       "name" : "Upasana Singh"
     } ],
     "time" : "7:00 PM - 9:00 PM",
-    "type" : ""
+    "type" : "Team of two"
   },
   "120" : {
     "date" : "23-03-2017",
@@ -437,7 +437,7 @@
     "type" : ""
   },
   "121" : {
-    "date" : "23-03-2017",
+    "date" : "24-03-2017",
     "description" : "This event contain different type of question oriented to bioengineering (biomedical , biotechnology engineering or any applied science courses related to biology) .this event consist of two rounds. ",
     "extrainfo" : {
       "one" : {
@@ -456,7 +456,7 @@
       "name" : "Deepak Sonker"
     } ],
     "time" : "11:00 AM - 2:00 PM",
-    "type" : ""
+    "type" : "Individual"
   },
   "122" : {
     "date" : "24-03-2017",
