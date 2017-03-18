@@ -1,12 +1,21 @@
 package com.betterclever.aparoksha.activities;
 
+import android.Manifest;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.betterclever.aparoksha.R;
 import com.betterclever.aparoksha.fragments.DescriptionFragment;
@@ -59,12 +68,22 @@ public class EventDetailActivity extends AppCompatActivity implements ValueEvent
     ExtraInfoFragment extraInfoFragment;
     UpdatesFragment updatesFragment;
     
+    ProgressDialog progressDialog;
+    
+    private static final int CALL_PERMISSSION_STATUS = 123;
+    private String numberToCall;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_detail);
         ButterKnife.bind(this);
     
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setMessage("Loading");
+        progressDialog.show();
+        
         eventID = getIntent().getStringExtra("eventID");
         init(savedInstanceState);
         
@@ -93,6 +112,7 @@ public class EventDetailActivity extends AppCompatActivity implements ValueEvent
         
         spaceTabLayout.initialize(viewPager, getSupportFragmentManager(),
             fragmentList, savedInstanceState);
+        
     }
     
     @Override
@@ -115,17 +135,56 @@ public class EventDetailActivity extends AppCompatActivity implements ValueEvent
                 @Override
                 public void onResourceReady(Bitmap resource, GlideAnimation glideAnimation) {
                     Blurry.with(EventDetailActivity.this)
+                        .color(Color.argb(120, 0, 0, 0))
                         .from(resource)
                         .into(eventImageView);
                     
                     eventImageViewSecond.setImageBitmap(resource);
+    
+                    if(progressDialog!=null){
+                        progressDialog.hide();
+                    }
                 }
             });
-        
     }
     
     @Override
     public void onCancelled(DatabaseError databaseError) {
         
+    }
+    
+    public void call(String number){
+        
+        numberToCall = number;
+        
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:" + number));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.CALL_PHONE},CALL_PERMISSSION_STATUS);
+            return;
+        }
+        startActivity(intent);
+    }
+    
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        
+        switch (requestCode) {
+            case CALL_PERMISSSION_STATUS: {
+                if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse("tel:" + numberToCall));
+                    startActivity(intent);
+                    
+                } else {
+                    Toast.makeText(this,"Calling permission not granted. Grant permission in Settings",Toast.LENGTH_SHORT);
+                }
+                return;
+            }
+        }
     }
 }

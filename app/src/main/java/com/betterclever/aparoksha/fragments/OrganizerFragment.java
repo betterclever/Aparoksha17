@@ -13,11 +13,11 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.betterclever.aparoksha.R;
+import com.betterclever.aparoksha.activities.EventDetailActivity;
 import com.betterclever.aparoksha.model.Organizer;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +58,7 @@ public class OrganizerFragment extends Fragment {
             Button callButton = (Button) child.findViewById(R.id.call_button);
         
             organizerName.setText(organizer.getName());
-            organizerPhone.setText(organizer.getPhone());
+            organizerPhone.setText(organizer.getContact());
         
             callButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -87,6 +87,7 @@ public class OrganizerFragment extends Fragment {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             for (Organizer organizer : organizers) {
         
+                final String number = organizer.getContact();
                 View child = inflater.inflate(R.layout.card_organizer, scrollView, false);
         
                 TextView organizerName = (TextView) child.findViewById(R.id.organizer_name);
@@ -94,12 +95,13 @@ public class OrganizerFragment extends Fragment {
                 Button callButton = (Button) child.findViewById(R.id.call_button);
         
                 organizerName.setText(organizer.getName());
-                organizerPhone.setText(organizer.getPhone());
-        
+                organizerPhone.setText(organizer.getContact());
+                Log.d(TAG, "update: "+ organizer.getContact());
+                
                 callButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //TODO: Perform Call
+                        ((EventDetailActivity) getActivity()).call(number);
                     }
                 });
         

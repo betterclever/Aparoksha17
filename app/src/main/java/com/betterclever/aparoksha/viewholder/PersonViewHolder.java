@@ -1,5 +1,12 @@
 package com.betterclever.aparoksha.viewholder;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -7,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.betterclever.aparoksha.R;
+import com.betterclever.aparoksha.activities.EventDetailActivity;
+import com.betterclever.aparoksha.activities.HomeActivity;
 import com.betterclever.aparoksha.model.TeamPerson;
 
 /**
@@ -32,14 +41,14 @@ public class PersonViewHolder extends RecyclerView.ViewHolder {
         }
     }
     
-    public void assignPerson(TeamPerson person){
+    public void assignPerson(final TeamPerson person, final HomeActivity activity){
         headerImageView.setImageResource(person.getImageRef());
         nameTextView.setText(person.getName());
         roleTextView.setText(person.getRole());
         actionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                activity.call(person.getNumber());
             }
         });
     }

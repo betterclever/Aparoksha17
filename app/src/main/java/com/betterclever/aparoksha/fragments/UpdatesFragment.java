@@ -1,6 +1,7 @@
 package com.betterclever.aparoksha.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.betterclever.aparoksha.R;
+import com.betterclever.aparoksha.activities.EventDetailActivity;
 import com.betterclever.aparoksha.model.Update;
 import com.betterclever.aparoksha.viewholder.UpdateViewholder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -44,6 +46,7 @@ public class UpdatesFragment extends Fragment {
         UpdatesFragment fragment = new UpdatesFragment();
         fragment.setArguments(args);
         return fragment;
+        
     }
     
     @Override
@@ -69,8 +72,25 @@ public class UpdatesFragment extends Fragment {
             query
         ) {
             @Override
-            protected void populateViewHolder(UpdateViewholder viewHolder, Update model, int position) {
+            protected void populateViewHolder(UpdateViewholder viewHolder, final Update model, int position) {
                 viewHolder.setData(model);
+                
+                if(!isEventSpecific) {
+                    viewHolder.getRootView().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            
+                            if(model.getEventID().equals("100")){
+                                return;
+                            }
+                            
+                            Intent intent = new Intent(getActivity(), EventDetailActivity.class);
+                            intent.putExtra("eventID", model.getEventID());
+                            startActivity(intent);
+                        }
+                    });
+                }
+                
             }
         };
     

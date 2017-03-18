@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import com.betterclever.aparoksha.R;
 import com.betterclever.aparoksha.adapters.DaysViewPagerAdapter;
 import com.gigamole.navigationtabstrip.NavigationTabStrip;
-import com.plattysoft.leonids.ParticleSystem;
+
 
 public class DaysViewActivity extends AppCompatActivity {
 

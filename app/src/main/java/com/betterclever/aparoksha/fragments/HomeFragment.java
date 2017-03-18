@@ -104,7 +104,7 @@ public class HomeFragment extends Fragment {
                 if(scannedString.endsWith("aparoksha17-made-by-betterclever")){
                     try {
                         int code = Integer.parseInt(scannedString.substring(0, 3));
-                        if(code <= 130 && code >= 100) {
+                        if(code <= 140 && code >= 100) {
                             Intent intent = new Intent(getActivity(),EventDetailActivity.class);
                             intent.putExtra("eventID",Integer.toString(code));
                             startActivity(intent);

@@ -1,8 +1,12 @@
 package com.betterclever.aparoksha.activities;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,11 +17,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.betterclever.aparoksha.R;
 import com.betterclever.aparoksha.fragments.TeamFragment;
 import com.betterclever.aparoksha.fragments.HomeFragment;
 import com.betterclever.aparoksha.fragments.UpdatesFragment;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.RemoteMessage;
 
 public class HomeActivity extends AppCompatActivity {
     
@@ -25,7 +32,9 @@ public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Toolbar toolbar;
     
+    private String numberToCall;
     Fragment homeFragment,developersFragment, updatesFragment;
+    public static final  int CALL_PERMISSSION_STATUS = 123;
     
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
         = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -119,9 +128,52 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SponsorsActivity.class));
                 break;
             case R.id.action_about_us:
+                
+                sendNotification();
+                
+                
                 break;
         }
         
         return super.onOptionsItemSelected(item);
     }
+    
+    private void sendNotification() {
+        FirebaseMessaging fm = FirebaseMessaging.getInstance();
+    }
+    
+    public void call(String number){
+        
+        numberToCall = number;
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:" + number));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.CALL_PHONE},CALL_PERMISSSION_STATUS);
+            return;
+        }
+        startActivity(intent);
+    }
+    
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case CALL_PERMISSSION_STATUS: {
+                if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+    
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse("tel:" + numberToCall));
+                    startActivity(intent);
+                    
+                } else {
+                    Toast.makeText(this,"Calling permission not granted. Grant permission in Settings",Toast.LENGTH_SHORT);
+                }
+                return;
+            }
+        }
+    }
+    
 }
+

@@ -1,5 +1,6 @@
 package com.betterclever.aparoksha.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.betterclever.aparoksha.R;
+import com.betterclever.aparoksha.activities.HomeActivity;
 import com.betterclever.aparoksha.model.TeamPerson;
 import com.betterclever.aparoksha.viewholder.PersonViewHolder;
 
@@ -40,7 +42,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonViewHolder> {
     
     @Override
     public void onBindViewHolder(final PersonViewHolder holder, final int position) {
-        holder.assignPerson(teamPersonList.get(position));
+        holder.assignPerson(teamPersonList.get(position),(HomeActivity) context);
         if(isDeveloperAdapter){
             if(holder.getGithubImageView()!=null){
                 holder.getGithubImageView().setOnClickListener(new View.OnClickListener() {

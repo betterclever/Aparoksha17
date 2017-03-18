@@ -14,6 +14,7 @@ import com.betterclever.aparoksha.model.Update;
 public class UpdateViewholder extends RecyclerView.ViewHolder {
     
     private TextView topicTV,dateTV,timeTV,messageTV;
+    private View rootView;
     
     public UpdateViewholder(View itemView) {
         super(itemView);
@@ -21,6 +22,7 @@ public class UpdateViewholder extends RecyclerView.ViewHolder {
         dateTV = (TextView) itemView.findViewById(R.id.date);
         timeTV = (TextView) itemView.findViewById(R.id.time);
         messageTV = (TextView) itemView.findViewById(R.id.detail);
+        rootView = itemView.findViewById(R.id.rootView);
     }
     
     public TextView getTopicTV() {
@@ -44,5 +46,9 @@ public class UpdateViewholder extends RecyclerView.ViewHolder {
         dateTV.setText(data.getDate());
         timeTV.setText(data.getTime());
         messageTV.setText(data.getMessage());
+    }
+    
+    public View getRootView() {
+        return rootView;
     }
 }

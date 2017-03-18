@@ -8,9 +8,9 @@ public class Organizer {
     @SerializedName("name")
     @Expose
     private String name;
-    @SerializedName("phone")
+    @SerializedName("contact")
     @Expose
-    private String phone;
+    private String contact;
     
     /**
      * No args constructor for use in serialization
@@ -27,7 +27,7 @@ public class Organizer {
     public Organizer(String name, String phone) {
         super();
         this.name = name;
-        this.phone = phone;
+        this.contact = phone;
     }
     
     public String getName() {
@@ -38,13 +38,12 @@ public class Organizer {
         this.name = name;
     }
     
-    public String getPhone() {
-        return phone;
+    public String getContact() {
+        return contact;
     }
     
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setContact(String contact) {
+        this.contact = contact;
     }
-    
     
 }
