@@ -79,9 +79,9 @@
         "infoDetail" : "₹ 4500",
         "infoTitle" : "Event Prizes"
       },
-+      "two" : {
-+        "infoDetail" : "Event Link will be posted here as well as on the app \n https://www.facebook.com/events/1025877937511666/",
-+        "infoTitle" : "Event Facebook Page"
+      "two" : {
+        "infoDetail" : "Event Link will be posted here as well as on the app \n https://www.facebook.com/events/1025877937511666/",
+        "infoTitle" : "Event Facebook Page"
        }
     },
     "image" : "104.jpg",
@@ -226,9 +226,9 @@
         "infoTitle" : "Event Prizes"
       },
      "two" : {
-+        "infoDetail" : "https://www.facebook.com/events/241946786213536/",
-+        "infoTitle" : "Event Page on Facebook"
-+      }
+        "infoDetail" : "https://www.facebook.com/events/241946786213536/",
+        "infoTitle" : "Event Page on Facebook"
+      }
     },
     "image" : "110.jpg",
     "location" : "Campus",
