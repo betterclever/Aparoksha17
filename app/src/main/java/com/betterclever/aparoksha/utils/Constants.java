@@ -47,7 +47,7 @@ public class Constants {
     
         teamAprList.add(
             new TeamPerson(R.drawable.organizer_ashish,
-                "Ashsih Reddy","Head Workshops",
+                "Ashish Reddy","Head Workshops",
                 "","NA",false));
     
         teamAprList.add(
@@ -85,7 +85,7 @@ public class Constants {
         
         memberList.add(new TeamPerson(R.drawable.memeber_atul,
             "Atul Sinha","Creatives",
-            "","",false));
+            "7061440715","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_rohan,
             "Rohan Choudhary","Creatives",
@@ -93,43 +93,43 @@ public class Constants {
     
         memberList.add(new TeamPerson(R.drawable.memeber_rajat,
             "Rajat Mishra","Creatives",
-            "","",false));
+            "7236861305","",false));
         
         memberList.add(new TeamPerson(R.drawable.memeber_khare,
             "Abhinav Khare","Website",
-            "","",false));
+            "8319473031","",false));
         
         memberList.add(new TeamPerson(R.drawable.memeber_padia,
             "Shubham Padia","Website",
-            "","",false));
+            "9918463021","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_dewan,
             "Aditya Dewan","Website",
-            "","",false));
+            "9465344919","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_lovish,
             "Lovish Kumar Vatwani","Sponsorship",
-            "","",false));
+            "9897800543","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_attri,
             "Indresh Attri","Sponsorship",
-            "","",false));
+            "9416785865","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_navneet,
             "Navneet Kumar Patel","Public Relations",
-            "","",false));
+            "9889662937","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_shyamsundar,
             "Shyam Sundar","Public Relations",
-            "","",false));
+            "7382041199","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_hariom,
             "Hariom Niranjan","Finance",
-            "","",false));
+            "8081372788","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_shyamkotecha,
             "Shyam Kotecha","Finance",
-            "","",false));
+            "8173898770","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_ram,
             "Ram Kishor","Logistics and Branding",
@@ -137,31 +137,31 @@ public class Constants {
     
         memberList.add(new TeamPerson(R.drawable.memeber_bhandari,
             "Shubham Bhandari","Logistics and Branding",
-            "","",false));
+            "7786915980","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_tarun,
             "Tarun Jain","Logistics and Branding",
-            "","",false));
+            "7597160623","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_avinash,
             "Avinash Yadav","Logistics and Branding",
-            "","",false));
+            "9628353778","",false));
         
         memberList.add(new TeamPerson(R.drawable.memeber_chaitanya,
             "Chaitanya Yadav","Events and Management",
-            "","",false));
+            "9628380537","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_somendra,
             "Somendra Agrawal","Events and Management",
-            "","",false));
+            "7233020977","",false));
     
         memberList.add(new TeamPerson(R.drawable.memeber_rajeev,
             "Rajeev Dixit","Events and Management",
-            "","",false));
+            "9918465331","",false));
         
         memberList.add(new TeamPerson(R.drawable.memeber_ashutosh,
             "Ashutosh Chandra","Events and Management",
-            "","",false));
+            "9919241909","",false));
     
     
         memberList.add(new TeamPerson(R.drawable.memeber_goyal,
@@ -170,12 +170,12 @@ public class Constants {
     
         memberList.add(new TeamPerson(R.drawable.memeber_diwakar,
             "Diwakar Vinay","Workshop/Talks",
-            "","",false));
+            "9580182785","",false));
     
     
         memberList.add(new TeamPerson(R.drawable.memeber_rachit,
             "Rachit Parashar","Workshop/Talks",
-            "","",false));
+            "9414910380","",false));
         
     
         memberList.add(new TeamPerson(R.drawable.memeber_mubaris,
