@@ -1,6 +1,7 @@
 package com.betterclever.aparoksha.fragments;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -87,6 +88,8 @@ public class UpdatesFragment extends Fragment {
                             Intent intent = new Intent(getActivity(), EventDetailActivity.class);
                             intent.putExtra("eventID", model.getEventID());
                             startActivity(intent);
+                            ((Activity) getContext()).overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+                    
                         }
                     });
                 }

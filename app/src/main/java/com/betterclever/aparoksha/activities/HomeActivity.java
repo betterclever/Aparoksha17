@@ -26,6 +26,8 @@ import com.betterclever.aparoksha.fragments.UpdatesFragment;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.RemoteMessage;
 
+import java.util.List;
+
 public class HomeActivity extends AppCompatActivity {
     
     private static final String TAG = HomeActivity.class.getSimpleName();
@@ -34,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     
     private String numberToCall;
     Fragment homeFragment,developersFragment, updatesFragment;
+    
     public static final  int CALL_PERMISSSION_STATUS = 123;
     
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -69,6 +72,7 @@ public class HomeActivity extends AppCompatActivity {
         assignViews();
         setSupportActionBar(toolbar);
         init();
+        
     }
     
     private void init() {
@@ -126,20 +130,15 @@ public class HomeActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_sponsers:
                 startActivity(new Intent(this, SponsorsActivity.class));
+                overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                 break;
             case R.id.action_about_us:
-                
-                sendNotification();
-                
-                
+                startActivity(new Intent(this,AboutUsActivity.class));
+                overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                 break;
         }
         
         return super.onOptionsItemSelected(item);
-    }
-    
-    private void sendNotification() {
-        FirebaseMessaging fm = FirebaseMessaging.getInstance();
     }
     
     public void call(String number){
@@ -153,6 +152,7 @@ public class HomeActivity extends AppCompatActivity {
             return;
         }
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
     
     @Override
@@ -174,6 +174,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         }
     }
+    
     
 }
 

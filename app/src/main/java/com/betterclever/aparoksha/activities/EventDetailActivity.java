@@ -187,4 +187,10 @@ public class EventDetailActivity extends AppCompatActivity implements ValueEvent
             }
         }
     }
+    
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+    }
 }

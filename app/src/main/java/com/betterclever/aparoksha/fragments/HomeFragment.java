@@ -1,8 +1,11 @@
 package com.betterclever.aparoksha.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -47,6 +50,10 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
+    
+        Log.d(TAG,
+            "onCreateView() called with: inflater = [" + inflater + "], container = [" + container + "], savedInstanceState = [" + savedInstanceState + "]");
+        
         assignViews(v);
         init();
         return v;
@@ -58,7 +65,7 @@ public class HomeFragment extends Fragment {
         adapter = new HighlightsViewPagerAdapter(getActivity().getSupportFragmentManager());
         
         viewPager.setAdapter(adapter);
-        viewPager.setPageTransformer(true, transformer);
+        viewPager.setPageTransformer(true, transformer);;
         viewPager.startAutoScroll(1000);
         viewPager.setAutoScrollDurationFactor(15);
     
@@ -73,6 +80,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), CategoriesViewActivity.class));
+                ((Activity) getContext()).overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
             }
         });
         
@@ -80,6 +88,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), DaysViewActivity.class));
+                ((Activity) getContext()).overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
             }
         });
         
@@ -108,6 +117,7 @@ public class HomeFragment extends Fragment {
                             Intent intent = new Intent(getActivity(),EventDetailActivity.class);
                             intent.putExtra("eventID",Integer.toString(code));
                             startActivity(intent);
+                            ((Activity) getContext()).overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                         }
                         else {
                             Toast.makeText(getContext(), "Invalid QR Code", Toast.LENGTH_LONG).show();
@@ -130,6 +140,31 @@ public class HomeFragment extends Fragment {
     public void onResume() {
         super.onResume();
         Log.d(TAG, "onResume() called");
-        //adapter.reset();
+    }
+    
+    
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+    }
+    
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if(!hidden){
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    
+                    for(int i=0;i<viewPager.getChildCount();i++){
+                        View v = viewPager.getChildAt(i);
+                        v.setTranslationX(0);
+                        v.setTranslationY(0);
+                        v.setVisibility(View.VISIBLE);
+                    }
+                }
+            }, 400);
+        }
     }
 }

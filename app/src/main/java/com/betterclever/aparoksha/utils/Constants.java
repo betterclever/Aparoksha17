@@ -80,7 +80,7 @@ public class Constants {
     
         developersList.add(new TeamPerson(R.drawable.dev_affan,
             "Affan Ahmad Fahmi","App Developer",
-            "8090956103","https://github.com/AnonymousME",true));
+            "8090956103","https://github.com/Anonymous-ME",true));
         
         
         memberList.add(new TeamPerson(R.drawable.memeber_atul,

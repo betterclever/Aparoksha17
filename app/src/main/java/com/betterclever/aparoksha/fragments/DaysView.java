@@ -1,5 +1,6 @@
 package com.betterclever.aparoksha.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -93,6 +94,7 @@ public class DaysView extends Fragment {
                         String id = firebaseRecyclerAdapter.getRef(position).getKey();
                         intent.putExtra("eventID",id);
                         getContext().startActivity(intent);
+                        ((Activity) getContext()).overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
                     }
                 });
 

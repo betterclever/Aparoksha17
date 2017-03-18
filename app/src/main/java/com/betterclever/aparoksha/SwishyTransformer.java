@@ -78,7 +78,6 @@ public class SwishyTransformer implements ViewPager.PageTransformer {
 
         else if(position < 0.4f){
             //0.0 to 0.4
-
             RelativeLayout rl = (RelativeLayout) page;
     
             ImageView view = (ImageView) rl.findViewById(R.id.highlight_image_view);
@@ -102,11 +101,12 @@ public class SwishyTransformer implements ViewPager.PageTransformer {
             page.setTranslationX(- 0.4f * page.getWidth());
 
             RelativeLayout rl = (RelativeLayout) page;
-    
+            
             ImageView view = (ImageView) rl.findViewById(R.id.highlight_image_view);
             view.setVisibility(View.INVISIBLE);
             ImageView placeholder = (ImageView) rl.findViewById(R.id.placeholder_view);
             placeholder.setVisibility(View.VISIBLE);
+            
             placeholder.setRotation(4*360*position);
 
         }
@@ -125,6 +125,7 @@ public class SwishyTransformer implements ViewPager.PageTransformer {
             view.setVisibility(View.INVISIBLE);
             ImageView placeholder = (ImageView) rl.findViewById(R.id.placeholder_view);
             placeholder.setVisibility(View.VISIBLE);
+            
             placeholder.setRotation(4*360*position);
         }
         
