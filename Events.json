@@ -765,25 +765,6 @@
     "time" : "10:00 AM - 1:00 PM",
     "type" : ""
   },
-  "133" : {
-    "date" : "23-03-2017",
-    "description" : "",
-    "extrainfo" : {
-      "one" : {
-        "infoDetail" : "To be updated",
-        "infoTitle" : "Event Prizes"
-      }
-    },
-    "image" : "133.jpg",
-    "location" : "To be updated",
-    "name" : "HerokuRush",
-    "organizers" : [ {
-      "contact" : "",
-      "name" : "Chaitanya Yadav"
-    } ],
-    "time" : "",
-    "type" : ""
-  },
   "134" : {
     "date" : "24-03-2017",
     "description" : "The much awaited signature event of IIIT Allahabad's Tech Fest Aparoksha 17 is here to endeavour with a challenging problem set.It will be a 5 hour individual contest with algorithmic problem-set of diverse nature to be hosted on Codechef. Prize money worth INR 30k and other exciting goodies await you. CODE ON!!",
@@ -804,6 +785,28 @@
       "name" : "Ankit Rao"
     } ],
     "time" : "9:00 PM - 2:00 AM",
+    "type" : "Individual"
+  },
+  "135" : {
+    "date" : "21-03-2017",
+    "description" : "Think you can solve any puzzle, have a penchant for riddles. Here's a chance to prove it. Presenting you Perplexus, the Annual Online Treasure Hunt, better than ever before .",
+    "extrainfo" : {
+      "one" : {
+        "infoDetail" : "Worth Rs. 3000",
+        "infoTitle" : "Event Prizes"
+      }
+    },
+    "image" : "135.jpg",
+    "location" : "Online",
+    "name" : "Perplexus",
+    "organizers" : [ {
+      "contact" : "8603111470",
+      "name" : "Abhishek D Nandan"
+    }, {
+      "contact" : "",
+      "name" : "Pranjal Sanjanwala"
+    } ],
+    "time" : "11PM onwards",
     "type" : "Individual"
   }
 }

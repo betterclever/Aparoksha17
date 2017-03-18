@@ -1,6 +1,7 @@
 package com.betterclever.aparoksha;
 
 import android.app.NotificationManager;
+import android.graphics.Color;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
@@ -28,9 +29,12 @@ public class FcmService extends FirebaseMessagingService {
             
             NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
+                    .setColor(Color.RED)
                     .setSmallIcon(R.drawable.ic_notifications_black_24dp)
                     .setContentTitle(remoteMessage.getNotification().getTitle())
-                    .setContentText(remoteMessage.getNotification().getBody());
+                    .setContentText(remoteMessage.getNotification().getBody())
+                    .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText(remoteMessage.getNotification().getBody()));
     
             int mNotificationId = 001;
             NotificationManager mNotifyMgr =

@@ -140,12 +140,15 @@ public class EventDetailActivity extends AppCompatActivity implements ValueEvent
                         .into(eventImageView);
                     
                     eventImageViewSecond.setImageBitmap(resource);
-    
-                    if(progressDialog!=null){
-                        progressDialog.hide();
-                    }
+                    dismissLoadingDialog();
                 }
             });
+    }
+    
+    private void dismissLoadingDialog() {
+        if(progressDialog!=null){
+            progressDialog.dismiss();
+        }
     }
     
     @Override

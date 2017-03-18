@@ -20,12 +20,14 @@ public class HighlightsViewPagerAdapter extends FragmentStatePagerAdapter {
     private List<HighlightsFragment> fragments;
 
     public HighlightsViewPagerAdapter(FragmentManager fm) {
+        
         super(fm);
         fragments = new ArrayList<>();
         fragments.add(HighlightsFragment.newInstance(R.drawable.hint,"Hack In the North"));
-        fragments.add(HighlightsFragment.newInstance(R.drawable.alkhwar,"Alkhwarizm"));
         fragments.add(HighlightsFragment.newInstance(R.drawable.humble_fool_cup,"HumbleFool Cup"));
+        fragments.add(HighlightsFragment.newInstance(R.drawable.topbot,"Topbot"));
         fragments.add(HighlightsFragment.newInstance(R.drawable.tritech,"Tri Techathlon"));
+        
     }
 
     @Override
