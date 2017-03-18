@@ -99,11 +99,19 @@
   },
   "105" : {
     "date" : "25-03-2017",
-    "description" : "Wolf 2311 is a team event of electronics hardware design.Test your technical knowledge with a slight blend of entrepreneur skill in 2311,the quintessential electronics lab of IIITA ",
+    "description" : "Wolf of 2311 is a team event of electronics hardware design. Test your technical knowledge with a slight blend of entrepreneurship skills in 2311,the quintessential electronics lab of IIITA ",
     "extrainfo" : {
       "one" : {
         "infoDetail" : "Worth ₹4000",
         "infoTitle" : "Event Prizes"
+      },
+      "two" : {
+        "infoDetail" : "https://www.facebook.com/events/415098388841541/",
+        "infoTitle" : "Event Link On Facebook"
+      },
+      "three" : {
+        "infoDetail" : "https://goo.gl/forms/tPZfziyR2YZk5ips1",
+        "infoTitle" : "Event Registration Link"
       }
     },
     "image" : "105.jpg",
@@ -120,7 +128,7 @@
       "name" : "Naveen Manikanta"
     } ],
     "time" : "7:00 PM - 9:00 PM",
-    "type" : "team"
+    "type" : "team of 2"
   },
   "106" : {
     "date" : "25-03-2017",
