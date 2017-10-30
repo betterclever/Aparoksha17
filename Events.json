@@ -352,12 +352,12 @@
     "description" : "Counter-Strike is a first-person shooter video game developed by Valve Corporation. Make your clans and fight one on one. ",
     "extrainfo" : {
       "one" : {
-        "infoDetail" : "Prizes worth ₹3000",
+        "infoDetail" : "Prizes worth ₹3000 and gaming goodies.",
         "infoTitle" : "Event Prizes"
       }
     },
     "image" : "115.jpg",
-    "location" : "Computer Centre 3",
+    "location" : "Computer Centre 3 and Pavilion",
     "name" : "CS (1.6 + Global Offensive)",
     "organizers" : [ {
       "contact" : "9414038742",
